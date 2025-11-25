@@ -13,7 +13,7 @@ int main() {
         cout << "============================\n";
         cout << "   Welcome to FCAI Board Games!\n";
         cout << "============================\n";
-        cout << "1. XO DEMO\n";
+        cout << "1.  Normal XO \n";
         cout << "============================\n";
         cout << "2. Misere Tic-Tac-Toe\n";
         cout << "============================\n";
