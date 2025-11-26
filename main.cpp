@@ -4,6 +4,11 @@
 #include "Misere_TICTAKTOE.h"
 #include "Numerical_TicTacToe.h"
 #include "Diamond_TTT.h"
+#include "FiveByFive_Board.h"
+#include "FiveByFive_UI.h"
+#include "Word_Board.h"
+#include "Word_UI.h"
+
 using namespace std;
 
 int main() {
@@ -21,11 +26,16 @@ int main() {
         cout << "============================\n";
         cout << "4. Diamond Tic-Tac-Toe\n";
         cout << "============================\n";
-        cout << "5. Exit\n";
+        cout << "5. 5x5 Tic-Tac-Toe \n";
+        cout << "============================\n";
+        cout << "6. Word Game \n";
+        cout << "============================\n";
+
+        cout << "6. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
-        if (choice == 5) {
+        if (choice == 7) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
@@ -101,6 +111,45 @@ else if (choice == 3) {
             delete[] players;
             delete ui;
         }
+        // ============================
+        // 5. 5x5 Tic Tac Toe
+        // ============================
+
+   else if (choice == 5) {
+    srand(static_cast<unsigned int>(time(0)));
+    UI<char>* ui = new FiveByFive_UI();
+    Board<char>* board = new FiveByFive_Board();
+    Player<char>** players = ui->setup_players(); // uses UI default to create X and O
+
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete[] players;
+    delete ui;
+}
+        // ============================
+        // 6. Word Game
+        // ============================
+
+
+else if (choice == 6)
+{
+     srand(static_cast<unsigned int>(time(0)));
+    UI<char>* ui = new Word_UI();
+    Board<char>* board = new Word_Board("dic.txt", '-');
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete[] players;
+    delete ui;
+}
+
+
+
 
         else {
             cout << "Invalid choice, try again.\n";
