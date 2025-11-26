@@ -8,6 +8,8 @@
 #include "FiveByFive_UI.h"
 #include "Word_Board.h"
 #include "Word_UI.h"
+#include "Obstacles_Board.h"
+#include "Obstacles_UI.h"
 
 using namespace std;
 
@@ -30,12 +32,15 @@ int main() {
         cout << "============================\n";
         cout << "6. Word Game \n";
         cout << "============================\n";
+        cout << "7. Obstacles Game \n";
+        cout << "============================\n";
 
-        cout << "6. Exit\n";
+
+        cout << "8. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
-        if (choice == 7) {
+        if (choice == 8) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
@@ -146,7 +151,25 @@ else if (choice == 6)
     delete board;
     delete[] players;
     delete ui;
+
 }
+        // ============================
+        // 7. Obstacles Game
+        // ============================ 
+else if (choice == 7) {
+    srand(static_cast<unsigned int>(time(0)));
+    UI<char>* ui = new Obstacles_UI();
+    Board<char>* board = new Obstacles_Board('.', '#');
+    Player<char>** players = ui->setup_players();
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete[] players;
+    delete ui;
+}
+
+
 
 
 
