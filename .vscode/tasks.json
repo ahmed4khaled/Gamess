@@ -15,6 +15,12 @@
                 "XO_Classes.cpp",
                 "FiveByFive_Board.cpp",
                 "FiveByFive_UI.cpp",
+                "Word_Board.cpp",
+                "Word_UI.cpp",
+                "Obstacles_Board.cpp",
+                "Obstacles_UI.cpp",
+                
+                
                 "-o",
                 "main.exe"
             ],
