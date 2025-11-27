@@ -46,7 +46,7 @@ int main() {
         }
 
         // ============================
-        // 1. XO DEMO
+        // 1. XO Game
         // ============================
         if (choice == 1) {
             srand(static_cast<unsigned int>(time(0)));
