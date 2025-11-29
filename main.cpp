@@ -10,6 +10,7 @@
 #include "Word_UI.h"
 #include "Obstacles_Board.h"
 #include "Obstacles_UI.h"
+#include "UltimateTTT.h"
 
 using namespace std;
 
@@ -34,13 +35,13 @@ int main() {
         cout << "============================\n";
         cout << "7. Obstacles Game \n";
         cout << "============================\n";
-
-
-        cout << "8. Exit\n";
+        cout << "8. Ultimate Tic-Tac-Toe\n";
+        cout << "============================\n";
+        cout << "9. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
-        if (choice == 8) {
+        if (choice == 9) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
@@ -168,6 +169,23 @@ else if (choice == 7) {
     delete[] players;
     delete ui;
 }
+
+        // ============================
+        // 8. Ultimate Tic-Tac-Toe
+        // ============================
+        else if (choice == 8) {
+    UI<char>* ui = new UltimateTTT_UI();
+    Board<char>* board = new UltimateTTTBoard();
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete[] players;
+    delete ui;
+}
+
 
 
 
