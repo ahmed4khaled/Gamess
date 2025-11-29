@@ -11,6 +11,7 @@
 #include "Obstacles_Board.h"
 #include "Obstacles_UI.h"
 #include "UltimateTTT.h"
+#include "4x4_MovingTTT.h"
 
 using namespace std;
 
@@ -37,11 +38,14 @@ int main() {
         cout << "============================\n";
         cout << "8. Ultimate Tic-Tac-Toe\n";
         cout << "============================\n";
-        cout << "9. Exit\n";
+        cout << "9. 4 x 4 Moving Tic-Tac-Toe\n";
+        cout << "============================\n";
+        cout << "10. Exit\n";
+        cout << "============================\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
-        if (choice == 9) {
+        if (choice == 10) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
@@ -181,6 +185,19 @@ else if (choice == 7) {
     GameManager<char> game(board, players, ui);
     game.run();
 
+    delete board;
+    delete[] players;
+    delete ui;
+}
+        // ============================
+        // 9. 4x4 Moving Tic Tac Toe
+        else if (choice == 9) {
+    srand(static_cast<unsigned int>(time(0)));
+    UI<char>* ui = new MovingTTT4x4_UI();
+    Board<char>* board = new MovingTTT4x4_Board();
+    Player<char>** players = ui->setup_players();
+    GameManager<char> game(board, players, ui);
+    game.run();
     delete board;
     delete[] players;
     delete ui;
