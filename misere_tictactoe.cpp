@@ -1,269 +1,180 @@
-#include <iostream>
-#include <iomanip>
-#include <cctype>
-#include <limits>
-#include <vector>
 #include "Misere_TICTAKTOE.h"
-using namespace std;
+#include <iostream>
+#include <limits>
+#include <cstdlib>
+#include <ctime>
 
-// ---------------- MisereBoard implementation ----------------
+/* ============================================================
+ *   BOARD IMPLEMENTATION
+ * ============================================================ */
 
-MisereBoard::MisereBoard() : Board<char>(3, 3) {
-    for (auto &r : board)
-        for (auto &c : r)
-            c = blank_symbol;
+/**
+ * @brief Constructs empty 3×3 board.
+ */
+MisereBoard::MisereBoard() : Board<char>(3,3) {
+    for (int r = 0; r < rows; r++)
+        for (int c = 0; c < columns; c++)
+            board[r][c] = blank;
     n_moves = 0;
 }
 
+/**
+ * @brief Attempts to place symbol on board.
+ */
 bool MisereBoard::update_board(Move<char>* move) {
-    int x = move->get_x();
-    int y = move->get_y();
-    char mark = move->get_symbol();
+    int r = move->get_x();
+    int c = move->get_y();
+    char s = move->get_symbol();
 
-    if (!(x < 0 || x >= rows || y < 0 || y >= columns))
-    {
-        if (mark == 0) { // undo
-            // Only undo if currently not blank
-            if (board[x][y] != blank_symbol) {
-                n_moves--;
-                board[x][y] = blank_symbol;
-                return true;
-            }
-            return false;
-        } else {
-            if (board[x][y] == blank_symbol) {
-                n_moves++;
-                board[x][y] = toupper(mark);
-                return true;
-            }
-        }
-    }
-    return false;
+    if (r < 0 || r >= rows || c < 0 || c >= columns)
+        return false;
+
+    if (board[r][c] != blank)
+        return false;
+
+    board[r][c] = s;
+    n_moves++;
+    return true;
 }
 
-bool MisereBoard::has_three_in_row(char s) const {
+/**
+ * @brief Standard 3-in-a-row check.
+ */
+bool MisereBoard::check_three(char s) const {
     // rows
-    for (int i = 0; i < rows; ++i)
-        if (board[i][0] == s && board[i][1] == s && board[i][2] == s)
+    for (int r = 0; r < 3; r++)
+        if (board[r][0] == s && board[r][1] == s && board[r][2] == s)
             return true;
 
-    // cols
-    for (int j = 0; j < columns; ++j)
-        if (board[0][j] == s && board[1][j] == s && board[2][j] == s)
+    // columns
+    for (int c = 0; c < 3; c++)
+        if (board[0][c] == s && board[1][c] == s && board[2][c] == s)
             return true;
 
-    // diagonals
-    if (board[0][0] == s && board[1][1] == s && board[2][2] == s) return true;
-    if (board[0][2] == s && board[1][1] == s && board[2][0] == s) return true;
+    // diag ↘
+    if (board[0][0] == s && board[1][1] == s && board[2][2] == s)
+        return true;
+
+    // diag ↙
+    if (board[0][2] == s && board[1][1] == s && board[2][0] == s)
+        return true;
 
     return false;
 }
 
-bool MisereBoard::is_win(Player<char>* /*player*/) {
-    // In Misère, creating a line is a loss, not a win.
-    return false;
+/**
+ * @brief True if board full.
+ */
+bool MisereBoard::full_board() const {
+    for (int r = 0; r < 3; r++)
+        for (int c = 0; c < 3; c++)
+            if (board[r][c] == blank)
+                return false;
+    return true;
 }
 
+/**
+ * @brief Player wins if opponent loses.
+ */
+bool MisereBoard::is_win(Player<char>* player) {
+    char me = player->get_symbol();
+    char opp = (me == 'X' ? 'O' : 'X');
+    return check_three(opp); // opponent formed 3 → I win
+}
+
+/**
+ * @brief Player loses if they form 3-in-a-row.
+ */
 bool MisereBoard::is_lose(Player<char>* player) {
-    char s = player->get_symbol();
-    s = toupper(s);
-    return has_three_in_row(s);
+    return check_three(player->get_symbol());
 }
 
-bool MisereBoard::is_draw(Player<char>* /*player*/) {
-    bool x_three = has_three_in_row('X');
-    bool o_three = has_three_in_row('O');
-    return (n_moves == rows * columns) && !x_three && !o_three;
+/**
+ * @brief Draw = full board and nobody lost.
+ */
+bool MisereBoard::is_draw(Player<char>* player) {
+    return full_board() &&
+        !check_three('X') &&
+        !check_three('O');
 }
 
-bool MisereBoard::game_is_over(Player<char>* player) {
-    return is_lose(player) || is_draw(player);
+/**
+ * @brief Game ends if win, lose, or draw.
+ */
+bool MisereBoard::game_is_over(Player<char>* p) {
+    return is_win(p) || is_lose(p) || is_draw(p);
 }
 
-// ---------------- MisereUI implementation ----------------
+/* ============================================================
+ *   MISERE UI IMPLEMENTATION
+ * ============================================================ */
 
-MisereUI::MisereUI() : UI<char>("Welcome to Misère Tic-Tac-Toe (avoid making 3-in-a-row)", 3) {}
+MisereUI::MisereUI() : UI<char>(2) {
+    std::srand(static_cast<unsigned>(time(nullptr)));
+}
 
+/**
+ * @brief Safe integer input.
+ */
+int MisereUI::read_int_in_range(int minv, int maxv) const {
+    int x;
+    while (true) {
+        if (std::cin >> x && x >= minv && x <= maxv) return x;
+
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid! Enter [" << minv << "-" << maxv << "]: ";
+    }
+}
+
+/**
+ * @brief Creates either human or AI player.
+ */
 Player<char>* MisereUI::create_player(std::string& name, char symbol, PlayerType type) {
-    cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
-         << " player: " << name << " (" << symbol << ")\n";
     return new Player<char>(name, symbol, type);
 }
 
-// Minimx/backtracking implementation for Misère Tic-Tac-Toe
-// Score semantics:
-//   + (positive) => good for AI (opponent more likely to lose)
-//   - (negative) => bad for AI (AI likely to lose)
-//   0 => draw
-int MisereUI::minimax(MisereBoard* board, char aiSymbol, char curSymbol, int depth, bool isMax) {
-    // create temp player for curSymbol to test is_lose
-    Player<char> tempPlayer("temp", curSymbol, PlayerType::COMPUTER);
-    Player<char> aiPlayer("aiTemp", aiSymbol, PlayerType::COMPUTER);
-
-    // If the player who just moved created a three-in-a-row, they lose.
-    // But here we are being called for the side to move now. We will check terminal states
-    // immediately after making a move in the recursion. So at the start of this call,
-    // we consider that no immediate loss has just occurred (handled by caller).
-    // However we still check for full board draw:
-    if (board->is_draw(&tempPlayer)) {
-        return 0; // draw
+/**
+ * @brief Displays the 3x3 board.
+ */
+void MisereUI::display_board_matrix(const std::vector<std::vector<char>>& m) const {
+    std::cout << "\n    0   1   2\n";
+    std::cout << "  -----------\n";
+    for (int r = 0; r < 3; r++) {
+        std::cout << r << " |";
+        for (int c = 0; c < 3; c++)
+            std::cout << " " << m[r][c] << " |";
+        std::cout << "\n  -----------\n";
     }
-
-    // We'll generate all possible moves for current player curSymbol
-    int best;
-    if (isMax) best = numeric_limits<int>::min();
-    else best = numeric_limits<int>::max();
-
-    // Iterate cells
-    for (int r = 0; r < board->get_rows(); ++r) {
-        for (int c = 0; c < board->get_columns(); ++c) {
-            // try placing at r,c if empty
-            // We have no direct "get_cell" API, so check by attempting to place and reading success
-            Move<char> tryMove(r, c, curSymbol);
-            bool placed = board->update_board(&tryMove);
-            if (!placed) continue; // cell occupied or invalid
-
-            // After placing, if curSymbol created 3-in-a-row => curSymbol loses immediately
-            Player<char> placedPlayer("p", curSymbol, PlayerType::COMPUTER);
-            if (board->is_lose(&placedPlayer)) {
-                // curSymbol lost by making a line; so this branch yields:
-                int score;
-                if (curSymbol == aiSymbol) {
-                    // AI just made losing move
-                    score = -10 + depth; // penalize, prefer later losses (hence +depth)
-                } else {
-                    // Opponent just made losing move -> good for AI
-                    score = 10 - depth;
-                }
-
-                // undo move
-                Move<char> undoMove(r, c, 0);
-                board->update_board(&undoMove);
-
-                // evaluate for minimax
-                if (isMax) best = max(best, score);
-                else best = min(best, score);
-
-                // continue to next cell
-                continue;
-            }
-
-            // Not terminal -> if board full now -> draw
-            if (board->is_draw(&placedPlayer)) {
-                // undo
-                Move<char> undoMove(r, c, 0);
-                board->update_board(&undoMove);
-
-                if (isMax) best = max(best, 0);
-                else best = min(best, 0);
-                continue;
-            }
-
-            // Recurse: next player moves
-            char nextSymbol = (curSymbol == 'X') ? 'O' : 'X';
-            int val = minimax(board, aiSymbol, nextSymbol, depth + 1, !isMax);
-
-            // undo move
-            Move<char> undoMove(r, c, 0);
-            board->update_board(&undoMove);
-
-            if (isMax) best = max(best, val);
-            else best = min(best, val);
-        }
-    }
-
-    // If no moves possible (shouldn't happen because draw check above), return draw
-    if (best == numeric_limits<int>::min()) return 0;
-    if (best == numeric_limits<int>::max()) return 0;
-    return best;
 }
 
-Move<char>* MisereUI::find_best_move(MisereBoard* board, char aiSymbol) {
-    int bestVal = numeric_limits<int>::min();
-    Move<char>* bestMove = nullptr;
+/**
+ * @brief Gets move from user or AI (random).
+ */
+Move<char>* MisereUI::get_move(Player<char>* p) {
+    Board<char>* b = p->get_board_ptr();
+    auto mat = b->get_board_matrix();
 
-    for (int r = 0; r < board->get_rows(); ++r) {
-        for (int c = 0; c < board->get_columns(); ++c) {
-            Move<char> mv(r, c, aiSymbol);
-            bool placed = board->update_board(&mv);
-            if (!placed) continue;
+    // Human
+    if (p->get_type() == PlayerType::HUMAN) {
+        std::cout << p->get_name() << " (" << p->get_symbol() << ") enter row 0–2: ";
+        int r = read_int_in_range(0,2);
 
-            Player<char> placedPlayer("p", aiSymbol, PlayerType::COMPUTER);
-            int score;
+        std::cout << "enter col 0–2: ";
+        int c = read_int_in_range(0,2);
 
-            // If AI immediately creates a 3-in-row -> AI loses -> very bad
-            if (board->is_lose(&placedPlayer)) {
-                score = -10; // immediate loss
-            } else if (board->is_draw(&placedPlayer)) {
-                score = 0;
-            } else {
-                // opponent moves next
-                char next = (aiSymbol == 'X') ? 'O' : 'X';
-                score = minimax(board, aiSymbol, next, 1, false);
-            }
-
-            // undo
-            Move<char> undo(r, c, 0);
-            board->update_board(&undo);
-
-            if (score > bestVal) {
-                bestVal = score;
-                if (bestMove) delete bestMove;
-                bestMove = new Move<char>(r, c, aiSymbol);
-            }
-        }
+        return new Move<char>(r, c, p->get_symbol());
     }
 
-    // If no move found (shouldn't happen), pick first empty cell
-    if (!bestMove) {
-        for (int r = 0; r < board->get_rows(); ++r) {
-            for (int c = 0; c < board->get_columns(); ++c) {
-                Move<char> mv(r, c, aiSymbol);
-                if (board->update_board(&mv)) {
-                    // undo immediately and return this
-                    Move<char> undo(r, c, 0);
-                    board->update_board(&undo);
-                    return new Move<char>(r, c, aiSymbol);
-                }
-            }
-        }
-    }
+    // AI: pick random empty
+    std::vector<std::pair<int,int>> empties;
+    for (int r=0;r<3;r++)
+        for (int c=0;c<3;c++)
+            if (mat[r][c] == '-') empties.emplace_back(r,c);
 
-    return bestMove;
-}
+    if (empties.empty())
+        return new Move<char>(0,0,p->get_symbol());
 
-Move<char>* MisereUI::get_move(Player<char>* player) {
-    int x = 0, y = 0;
-
-    if (player->get_type() == PlayerType::HUMAN) {
-        cout << "\nPlease enter your move x and y (0 to 2): ";
-        cin >> x >> y;
-        return new Move<char>(x, y, player->get_symbol());
-    } else {
-        // Computer: use backtracking/minimax to find best move
-        MisereBoard* board = dynamic_cast<MisereBoard*>(player->get_board_ptr());
-        if (!board) {
-            // fallback: random move
-            int r = rand() % 3;
-            int c = rand() % 3;
-            return new Move<char>(r, c, player->get_symbol());
-        }
-
-        Move<char>* best = find_best_move(board, toupper(player->get_symbol()));
-        if (best) return best;
-
-        // fallback random
-        for (int r = 0; r < board->get_rows(); ++r)
-            for (int c = 0; c < board->get_columns(); ++c) {
-                Move<char> mv(r, c, player->get_symbol());
-                if (board->update_board(&mv)) {
-                    Move<char> undo(r, c, 0);
-                    board->update_board(&undo);
-                    return new Move<char>(r, c, player->get_symbol());
-                }
-            }
-
-        // final fallback (shouldn't happen)
-        return new Move<char>(0, 0, player->get_symbol());
-    }
+    int k = rand() % empties.size();
+    return new Move<char>(empties[k].first, empties[k].second, p->get_symbol());
 }

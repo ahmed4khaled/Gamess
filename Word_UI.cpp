@@ -1,4 +1,5 @@
 #include "Word_UI.h"
+#include "Word_Board.h"
 #include <iostream>
 #include <limits>
 #include <algorithm>

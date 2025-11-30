@@ -1,240 +1,250 @@
-//--------------------------------------- IMPLEMENTATION
+/**
+ * @file Numerical_TTT.cpp
+ * @brief Implementation of Numerical Tic-Tac-Toe board & UI logic.
+ *
+ * Game Summary:
+ * - Board is 3×3.
+ * - Player 1 uses ODD numbers {1,3,5,7,9}.
+ * - Player 2 uses EVEN numbers {2,4,6,8}.
+ * - A number cannot be repeated after being used.
+ * - Win condition: Any row/column/diagonal summing to 15.
+ * - Draw: Board full with no winning line.
+ */
 
-#include <iostream>
-#include <iomanip>
-#include <algorithm>
 #include "Numerical_TicTacToe.h"
+#include <iostream>
+#include <limits>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
 
 using namespace std;
 
-//--------------------------------------- Numerical_TicTacToe_Board Implementation
+/* ============================================================
+ *                 BOARD IMPLEMENTATION
+ * ============================================================ */
 
+/**
+ * @brief Constructs a Numerical Tic-Tac-Toe board.
+ *
+ * Initializes:
+ * - 3×3 board filled with `blank_symbol` (0)
+ * - Player 1 available numbers = {1,3,5,7,9}
+ * - Player 2 available numbers = {2,4,6,8}
+ */
 Numerical_TicTacToe_Board::Numerical_TicTacToe_Board() : Board<int>(3, 3) {
-    // Initialize all cells with blank_symbol
-    for (auto& row : this->board)
-        for (auto& cell : row)
-            cell = blank_symbol;
-    
-    // Initialize available numbers
-    player1_available = {1, 3, 5, 7, 9}; // Odd numbers for Player 1
-    player2_available = {2, 4, 6, 8};    // Even numbers for Player 2
+    for (int r = 0; r < rows; ++r)
+        for (int c = 0; c < columns; ++c)
+            board[r][c] = blank_symbol;
+
+    player1_available = {1, 3, 5, 7, 9};
+    player2_available = {2, 4, 6, 8};
+
+    n_moves = 0;
 }
 
+/**
+ * @brief Attempts to place a number on the board.
+ *
+ * Conditions for valid move:
+ * - Cell is inside the board.
+ * - Cell is empty.
+ * - Number belongs to correct player set (odd/even).
+ * - Number has not been used before.
+ *
+ * @param move Pointer to Move object (row, col, number).
+ * @return true if the move was applied, false if invalid.
+ */
 bool Numerical_TicTacToe_Board::update_board(Move<int>* move) {
+    if (!move) return false;
+
     int x = move->get_x();
     int y = move->get_y();
     int number = move->get_symbol();
 
-    // Validate move boundaries
-    if (x < 0 || x >= this->rows || y < 0 || y >= this->columns) {
+    // Bounds check
+    if (x < 0 || x >= rows || y < 0 || y >= columns)
         return false;
-    }
 
-    // Check if cell is already occupied
-    if (this->board[x][y] != blank_symbol) {
+    // Must be empty
+    if (board[x][y] != blank_symbol)
         return false;
-    }
 
-    // Determine which player is making the move based on odd/even number
-    set<int>* available_set = nullptr;
-    if (number % 2 == 1) { // Odd number - Player 1
-        available_set = &player1_available;
-    } else if (number % 2 == 0 && number > 0) { // Even number - Player 2
-        available_set = &player2_available;
-    } else {
-        return false; // Invalid number
-    }
+    // Must be positive
+    if (number <= 0)
+        return false;
 
-    // Check if the number is available
-    if (available_set->find(number) == available_set->end()) {
-        return false; // Number already used or invalid
-    }
+    // Choose correct available set
+    set<int>* available_set = (number % 2 == 1)
+                                ? &player1_available
+                                : &player2_available;
+
+    // Ensure number is unused
+    if (available_set->find(number) == available_set->end())
+        return false;
 
     // Apply move
-    this->board[x][y] = number;
+    board[x][y] = number;
     available_set->erase(number);
-    this->n_moves++;
-    
+    ++n_moves;
+
     return true;
 }
 
-bool Numerical_TicTacToe_Board::is_win(Player<int>* player) {
-    // Check all rows
-    for (int i = 0; i < this->rows; ++i) {
-        if (this->board[i][0] != blank_symbol && 
-            this->board[i][1] != blank_symbol && 
-            this->board[i][2] != blank_symbol) {
-            if (this->board[i][0] + this->board[i][1] + this->board[i][2] == 15) {
+/**
+ * @brief Checks whether any row/column/diagonal sums to 15.
+ *
+ * Only checks sums when all three cells are non-zero.
+ *
+ * @return true if a 15-sum exists.
+ */
+bool Numerical_TicTacToe_Board::is_win(Player<int>* /*player*/) {
+    // Check rows
+    for (int r = 0; r < 3; ++r)
+        if (board[r][0] && board[r][1] && board[r][2])
+            if (board[r][0] + board[r][1] + board[r][2] == 15)
                 return true;
-            }
-        }
-    }
 
-    // Check all columns
-    for (int j = 0; j < this->columns; ++j) {
-        if (this->board[0][j] != blank_symbol && 
-            this->board[1][j] != blank_symbol && 
-            this->board[2][j] != blank_symbol) {
-            if (this->board[0][j] + this->board[1][j] + this->board[2][j] == 15) {
+    // Check columns
+    for (int c = 0; c < 3; ++c)
+        if (board[0][c] && board[1][c] && board[2][c])
+            if (board[0][c] + board[1][c] + board[2][c] == 15)
                 return true;
-            }
-        }
-    }
 
-    // Check main diagonal (top-left to bottom-right)
-    if (this->board[0][0] != blank_symbol && 
-        this->board[1][1] != blank_symbol && 
-        this->board[2][2] != blank_symbol) {
-        if (this->board[0][0] + this->board[1][1] + this->board[2][2] == 15) {
+    // Main diagonal
+    if (board[0][0] && board[1][1] && board[2][2])
+        if (board[0][0] + board[1][1] + board[2][2] == 15)
             return true;
-        }
-    }
 
-    // Check anti-diagonal (top-right to bottom-left)
-    if (this->board[0][2] != blank_symbol && 
-        this->board[1][1] != blank_symbol && 
-        this->board[2][0] != blank_symbol) {
-        if (this->board[0][2] + this->board[1][1] + this->board[2][0] == 15) {
+    // Anti diagonal
+    if (board[0][2] && board[1][1] && board[2][0])
+        if (board[0][2] + board[1][1] + board[2][0] == 15)
             return true;
-        }
-    }
 
     return false;
 }
-
-bool Numerical_TicTacToe_Board::is_draw(Player<int>* player) {
-    // Game is a draw if all cells are filled and no one has won
-    return (this->n_moves == 9 && !is_win(player));
+/**
+ * @brief Player loses if OPPONENT forms a line summing to 15.
+ *
+ * Numerical TicTacToe considers 'is_lose' as the opposite of is_win.
+ */
+bool Numerical_TicTacToe_Board::is_lose(Player<int>* player) {
+    (void)player; 
+    return false; // Loss is handled by game_is_over + is_win for opponent
 }
 
+/**
+ * @brief Draw if board is full AND no 15-sum line.
+ * @return true if draw.
+ */
+bool Numerical_TicTacToe_Board::is_draw(Player<int>* /*player*/) {
+    if (n_moves < rows * columns) return false;
+    return !is_win(nullptr);
+}
+
+/**
+ * @brief Game ends if win or draw.
+ * @return true if game is finished.
+ */
 bool Numerical_TicTacToe_Board::game_is_over(Player<int>* player) {
     return is_win(player) || is_draw(player);
 }
 
+/**
+ * @brief Returns available unused numbers for a player.
+ *
+ * @param player_num 1 or 2
+ * @return const reference to that player's available set
+ */
 const set<int>& Numerical_TicTacToe_Board::get_available_numbers(int player_num) const {
-    if (player_num == 1) {
-        return player1_available;
-    } else {
-        return player2_available;
-    }
+    return (player_num == 1) ? player1_available : player2_available;
 }
 
+/**
+ * @brief Checks if cell is empty.
+ */
 bool Numerical_TicTacToe_Board::is_cell_empty(int x, int y) const {
-    if (x < 0 || x >= this->rows || y < 0 || y >= this->columns) {
-        return false;
-    }
-    return this->board[x][y] == blank_symbol;
+    if (x < 0 || x >= rows || y < 0 || y >= columns) return false;
+    return board[x][y] == blank_symbol;
 }
 
-//--------------------------------------- Numerical_TicTacToe_UI Implementation
+/* ============================================================
+ *                 UI IMPLEMENTATION
+ * ============================================================ */
 
-Numerical_TicTacToe_UI::Numerical_TicTacToe_UI() 
-    : UI<int>("Welcome to FCAI Numerical Tic-Tac-Toe Game", 3) {}
+/**
+ * @brief Constructs UI with welcome message.
+ */
+Numerical_TicTacToe_UI::Numerical_TicTacToe_UI()
+    : UI<int>("Welcome to FCAI Numerical Tic-Tac-Toe Game", 3)
+{
+    srand(static_cast<unsigned>(time(nullptr)));
+}
 
+/**
+ * @brief Creates human or AI player.
+ *
+ * Symbol meaning:
+ * - 1 → odd-number player
+ * - 2 → even-number player
+ */
 Player<int>* Numerical_TicTacToe_UI::create_player(string& name, int symbol, PlayerType type) {
-    // Create player based on type
-    cout << "Creating " << (type == PlayerType::HUMAN ? "human" : "computer")
-         << " player: " << name << " (Player " << symbol 
-         << " - " << (symbol == 1 ? "Odd numbers" : "Even numbers") << ")\n";
-    
-    cout << "[DEBUG] PlayerType value: " << static_cast<int>(type) << endl;
-
-    Player<int>* p = new Player<int>(name, symbol, type);
-    
-    cout << "[DEBUG] Created player type check: " << (p->get_type() == PlayerType::HUMAN ? "HUMAN" : "COMPUTER") << endl;
-    
-    return p;
+    return new Player<int>(name, symbol, type);
 }
 
-Move<int>* Numerical_TicTacToe_UI::get_move(Player<int>* player) {
-    int x, y, number;
-    Numerical_TicTacToe_Board* board_ptr = 
-        dynamic_cast<Numerical_TicTacToe_Board*>(player->get_board_ptr());
-    
-    cout << "\n=== GET_MOVE CALLED ===" << endl;
-    cout << "[DEBUG] Player name: " << player->get_name() << endl;
-    cout << "[DEBUG] Player symbol: " << player->get_symbol() << endl;
-    cout << "[DEBUG] Player type: " << (player->get_type() == PlayerType::HUMAN ? "HUMAN" : 
-                                       player->get_type() == PlayerType::COMPUTER ? "COMPUTER" : "UNKNOWN") << endl;
-    cout << "[DEBUG] PlayerType enum value: " << static_cast<int>(player->get_type()) << endl;
-    
-    if (player->get_type() == PlayerType::HUMAN) {
-        cout << "[DEBUG] Entering HUMAN branch" << endl;
-        // Display available numbers
-        const set<int>& available = board_ptr->get_available_numbers(player->get_symbol());
-        cout << "\nPlayer " << player->get_name() << " - Available numbers: ";
-        for (int num : available) {
-            cout << num << " ";
-        }
-        cout << endl;
+/**
+ * @brief Requests move from human or generates AI move.
+ *
+ * Human:
+ *   Enter: row col number
+ *
+ * Computer:
+ *   Picks:
+ *     - random available number from correct set
+ *     - random empty cell
+ *
+ * @return Move pointer
+ */
+Move<int>* Numerical_TicTacToe_UI::get_move(Player<int>* p) {
+    if (!p) return nullptr;
 
-        // Get move from human player
-        cout << "Enter your move (row column number): ";
-        cin >> x >> y >> number;
+    auto* board_ptr = dynamic_cast<Numerical_TicTacToe_Board*>(p->get_board_ptr());
+    if (!board_ptr) return nullptr;
+
+    // === Human logic ===
+    if (p->get_type() == PlayerType::HUMAN) {
+        int x, y, num;
+        cout << "\n" << p->get_name()
+             << " - enter your move (row col number): ";
+        cin >> x >> y >> num;
+        return new Move<int>(x, y, num);
     }
-    else if (player->get_type() == PlayerType::COMPUTER) {
-        cout << "[DEBUG] Entering COMPUTER branch" << endl;
-        // Computer makes a random valid move
-        const set<int>& available = board_ptr->get_available_numbers(player->get_symbol());
-        
-        if (available.empty()) {
-            cout << "[DEBUG] No available numbers!" << endl;
-            return nullptr; // No available numbers
-        }
 
-        // Pick a random available number
-        auto it = available.begin();
-        advance(it, rand() % available.size());
-        number = *it;
+    // === Computer logic ===
+    int playerSymbol = p->get_symbol(); // 1 => odd, 2 => even
+    const set<int>& avail = board_ptr->get_available_numbers(playerSymbol);
 
-        // Find a random empty cell
-        do {
-            x = rand() % board_ptr->get_rows();
-            y = rand() % board_ptr->get_columns();
-        } while (!board_ptr->is_cell_empty(x, y));
+    // Collect empty cells
+    vector<pair<int,int>> empties;
+    for (int r = 0; r < 3; ++r)
+        for (int c = 0; c < 3; ++c)
+            if (board_ptr->is_cell_empty(r, c))
+                empties.emplace_back(r, c);
 
-        cout << "\nComputer " << player->get_name() << " plays: " << number 
-             << " at position (" << x << ", " << y << ")\n";
-    }
-    else {
-        cout << "[DEBUG] Entering ELSE branch - UNKNOWN PLAYER TYPE!" << endl;
-    }
-    
-    return new Move<int>(x, y, number);
-}
+    if (empties.empty() || avail.empty())
+        return new Move<int>(0, 0, 0); // fallback
 
-Player<int>** Numerical_TicTacToe_UI::setup_players() {
-    Player<int>** players = new Player<int>*[2];
-    
-    cout << "\n=== SETUP_PLAYERS CALLED ===" << endl;
-    
-    string name1;
-    cout << "Enter Player 1 Name: ";
-    cin >> name1;
+    // Random choice of empty cell
+    auto [rx, ry] = empties[rand() % empties.size()];
 
-    cout << "Choose Player 1 type:\n1. Human\n2. Computer\n";
-    int t1;
-    cin >> t1;
-    PlayerType type1 = (t1 == 1 ? PlayerType::HUMAN : PlayerType::COMPUTER);
-    
-    cout << "[DEBUG] Player 1 type selected: " << (type1 == PlayerType::HUMAN ? "HUMAN" : "COMPUTER") << endl;
+    // Random choice of available number
+    int index = rand() % avail.size();
+    auto it = avail.begin();
+    advance(it, index);
+    int chosenNumber = *it;
 
-    // Player 1 uses ODD numbers (symbol = 1)
-    players[0] = create_player(name1, 1, type1);
+    cout << "Computer plays number " << chosenNumber
+         << " at (" << rx << "," << ry << ")\n";
 
-    string name2;
-    cout << "\nEnter Player 2 Name: ";
-    cin >> name2;
-
-    cout << "Choose Player 2 type:\n1. Human\n2. Computer\n";
-    int t2;
-    cin >> t2;
-    PlayerType type2 = (t2 == 1 ? PlayerType::HUMAN : PlayerType::COMPUTER);
-    
-    cout << "[DEBUG] Player 2 type selected: " << (type2 == PlayerType::HUMAN ? "HUMAN" : "COMPUTER") << endl;
-
-    // Player 2 uses EVEN numbers (symbol = 2)
-    players[1] = create_player(name2, 2, type2);
-
-    return players;
+    return new Move<int>(rx, ry, chosenNumber);
 }
