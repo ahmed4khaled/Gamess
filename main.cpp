@@ -12,10 +12,9 @@
 #include "Obstacles_UI.h"
 #include "UltimateTTT.h"
 #include "Pyramid_TTT.h"
-
-
 #include "4x4_MovingTTT.h"
 #include "Memory_TTT.h"
+
 
 
 using namespace std;
@@ -32,7 +31,7 @@ int main() {
 
         int choice;
 
-        // --- Main Menu ---
+        // --- Main Menu --- //
         cout << "============================\n";
         cout << "   Welcome to FCAI Board Games!\n";
         cout << "============================\n";
@@ -66,11 +65,7 @@ int main() {
 
         cin >> choice;
 
-        // Exit condition
-        if (choice == 12) {
-            cout << "Exiting the program. Goodbye!\n";
-            return 0;
-        }
+        
 
         // ============================
         // 1. Normal XO
@@ -232,10 +227,11 @@ int main() {
             delete board;
             delete[] players;
             delete ui;
-        }// ============================
-// 10. Pyramid Tic Tac Toe
-// ============================
-else if (choice == 10) {
+        }
+        // ============================
+        // 10. Pyramid Tic Tac Toe
+        // ============================
+        else if (choice == 10) {
     srand(static_cast<unsigned int>(time(0)));
 
     UI<char>* ui = new Pyramid_UI();
@@ -266,9 +262,12 @@ else if (choice == 11) {
     delete[] players;
     delete ui;
 }
-
-
-        else {
+// Exit condition
+else if (choice == 12) {
+            cout << "Exiting the program. Goodbye!\n";
+            return 0;
+        }
+else {
             cout << "Invalid choice, try again.\n";
         }
     }
