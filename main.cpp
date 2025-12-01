@@ -11,7 +11,12 @@
 #include "Obstacles_Board.h"
 #include "Obstacles_UI.h"
 #include "UltimateTTT.h"
+#include "Pyramid_TTT.h"
+
+
 #include "4x4_MovingTTT.h"
+#include "Memory_TTT.h"
+
 
 using namespace std;
 
@@ -51,14 +56,18 @@ int main() {
         cout << "============================\n";
         cout << "9. 4 x 4 Moving Tic-Tac-Toe\n";
         cout << "============================\n";
-        cout << "10. Exit\n";
+        cout << "10. Pyramid Tic-Tac-Toe\n";
+        cout << "============================\n";
+        cout << "11. Memory Tic-Tac-Toe\n";
+        cout << "============================\n";
+        cout << "12. Exit\n";
         cout << "============================\n";
         cout << "Enter your choice: ";
 
         cin >> choice;
 
         // Exit condition
-        if (choice == 10) {
+        if (choice == 12) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
@@ -223,7 +232,41 @@ int main() {
             delete board;
             delete[] players;
             delete ui;
-        }
+        }// ============================
+// 10. Pyramid Tic Tac Toe
+// ============================
+else if (choice == 10) {
+    srand(static_cast<unsigned int>(time(0)));
+
+    UI<char>* ui = new Pyramid_UI();
+    Board<char>* board = new PyramidBoard();
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete[] players;
+    delete ui;
+}
+// ============================                         
+// 11. Memory Tic Tac Toe
+// ============================
+else if (choice == 11) {
+    srand(static_cast<unsigned int>(time(0)));
+
+    UI<char>* ui = new Memory_UI();
+    Board<char>* board = new MemoryBoard();
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete[] players;
+    delete ui;
+}
+
 
         else {
             cout << "Invalid choice, try again.\n";
