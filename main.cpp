@@ -14,8 +14,8 @@
 #include "Pyramid_TTT.h"
 #include "4x4_MovingTTT.h"
 #include "Memory_TTT.h"
+#include "SUS_TicTacToe.h"
 
-//test commit
 
 using namespace std;
 
@@ -59,10 +59,11 @@ int main() {
         cout << "============================\n";
         cout << "11. Memory Tic-Tac-Toe\n";
         cout << "============================\n";
-        cout << "12. Exit\n";
+        cout << "12. SUS Tic-Tac-Toe\n";
+        cout << "============================\n";
+        cout << "13. Exit\n";
         cout << "============================\n";
         cout << "Enter your choice: ";
-
         cin >> choice;
 
         
@@ -262,8 +263,24 @@ else if (choice == 11) {
     delete[] players;
     delete ui;
 }
-// Exit condition
+
+// ============================
+// 12. SUS Tic Tac Toe
+// ============================
 else if (choice == 12) {
+    srand(static_cast<unsigned int>(time(0)));
+    UI<char>* ui = new SUS_UI();
+    Board<char>* board = new SUS_Board();
+    Player<char>** players = ui->setup_players();
+    GameManager<char> game(board, players, ui);
+    game.run();
+    delete board;
+    delete[] players;
+    delete ui;
+}
+
+// Exit condition
+else if (choice == 13) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
