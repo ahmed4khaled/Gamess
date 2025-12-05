@@ -16,7 +16,6 @@
 #include "Memory_TTT.h"
 #include "SUS_TicTacToe.h"
 
-
 using namespace std;
 
 /**
@@ -270,7 +269,7 @@ else if (choice == 11) {
 else if (choice == 12) {
     srand(static_cast<unsigned int>(time(0)));
     UI<char>* ui = new SUS_UI();
-    Board<char>* board = new SUS_Board();
+    Board<char>* board = new SUSBoard();
     Player<char>** players = ui->setup_players();
     GameManager<char> game(board, players, ui);
     game.run();
