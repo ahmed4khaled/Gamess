@@ -3,9 +3,10 @@
 #include <limits>
 #include <iomanip>
 
-/////////////////////////////////////////////////////////////
-// SUSBoard Implementation
-/////////////////////////////////////////////////////////////
+
+/**
+* @brief SUS game (3 X 3) Board
+*/
 
 SUSBoard::SUSBoard() : Board(3, 3) {
     score[0] = score[1] = 0;
@@ -61,7 +62,13 @@ int SUSBoard::get_score(int i) {
 }
 
 bool SUSBoard::is_win(Player<char>* p) {
-    return false;
+	/**
+    * @brief ensure scores are updated
+    */
+    check_sus(0, 0, ' ');
+    int playerIndex = (n_moves % 2 == 1) ? 0 : 1;
+	cout << "Player " << p->get_name() << " Score: " << score[playerIndex] << endl;
+    return score[playerIndex] >= 3;
 }
 
 bool SUSBoard::is_lose(Player<char>* p) {
@@ -76,9 +83,9 @@ bool SUSBoard::game_is_over(Player<char>* p) {
     return is_draw(p);
 }
 
-/////////////////////////////////////////////////////////////
-// SUS_UI Implementation
-/////////////////////////////////////////////////////////////
+/**
+* @brief SUS game user interface 
+*/
 char SUS_UI::ask_letter(Player<char>* p) {
     char c;
     cout << p->get_name() << " choose your letter (S or U): ";

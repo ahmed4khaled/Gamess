@@ -15,6 +15,8 @@
 #include "4x4_MovingTTT.h"
 #include "Memory_TTT.h"
 #include "SUS_TicTacToe.h"
+#include "Connect4.h"
+
 
 using namespace std;
 
@@ -60,7 +62,9 @@ int main() {
         cout << "============================\n";
         cout << "12. SUS Tic-Tac-Toe\n";
         cout << "============================\n";
-        cout << "13. Exit\n";
+        cout << "13. Connect Four\n";
+        cout << "============================\n";
+        cout << "14. Exit\n";
         cout << "============================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -278,8 +282,22 @@ else if (choice == 12) {
     delete ui;
 }
 
-// Exit condition
+// ============================
+// 13.  Connect Four
+// ============================
 else if (choice == 13) {
+    srand(static_cast<unsigned int>(time(0)));
+    UI<char>* ui = new Connect4_UI() ;
+    Board<char>* board = new Connect4_Board();
+    Player<char>** players = ui->setup_players();
+    GameManager<char> game(board, players, ui);
+    game.run();
+    delete board;
+    delete[] players;
+    delete ui;
+}
+// Exit condition
+else if (choice == 14) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
