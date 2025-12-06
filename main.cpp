@@ -16,6 +16,7 @@
 #include "Memory_TTT.h"
 #include "SUS_TicTacToe.h"
 #include "Connect4.h"
+#include "InfinityTicTacToe.h"
 
 
 using namespace std;
@@ -64,7 +65,9 @@ int main() {
         cout << "============================\n";
         cout << "13. Connect Four\n";
         cout << "============================\n";
-        cout << "14. Exit\n";
+        cout << "14. Infinity Tic-Tac-Toe\n";
+        cout << "============================\n";
+        cout << "15. Exit\n";
         cout << "============================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -296,8 +299,30 @@ else if (choice == 13) {
     delete[] players;
     delete ui;
 }
-// Exit condition
+///////////////////////////
+// 14. Infinity Tic Tac Toe
+///////////////////////////
 else if (choice == 14) {
+    srand(static_cast<unsigned int>(time(0)));
+
+    InfinityBoard<char>* board = new InfinityBoard<char>();
+    InfinityUI<char>* ui = new InfinityUI<char>();
+    Player<char>** players = ui->setup_players();
+
+    GameManager<char> game(board, players, ui);
+    game.run();
+
+    delete board;
+    delete ui;
+    delete players[0];
+    delete players[1];
+    delete[] players;
+
+        }
+
+
+// Exit condition
+else if (choice == 15) {
             cout << "Exiting the program. Goodbye!\n";
             return 0;
         }
