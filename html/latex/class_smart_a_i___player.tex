@@ -1,0 +1,77 @@
+\doxysection{Smart\+AI\+\_\+\+Player Class Reference}
+\hypertarget{class_smart_a_i___player}{}\label{class_smart_a_i___player}\index{SmartAI\_Player@{SmartAI\_Player}}
+
+
+Simple AI player for Connect Four.  
+
+
+
+
+{\ttfamily \#include $<$Connect4.\+h$>$}
+
+Inheritance diagram for Smart\+AI\+\_\+\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_smart_a_i___player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_smart_a_i___player_a8eb7d263ff5940fc82bcc11ab9a8b3a7}{Smart\+AI\+\_\+\+Player}} (std\+::string \mbox{\hyperlink{class_player_af0ad0d4ca8584d23a98c723cd703a4f6}{name}}, char \mbox{\hyperlink{class_player_a272d6c4dab769930d4f8074918e7708a}{symbol}})
+\begin{DoxyCompactList}\small\item\em Construct AI player. \end{DoxyCompactList}\item 
+\Hypertarget{class_smart_a_i___player_a10e82e1c283f4af54c3ccff177c629f7}\label{class_smart_a_i___player_a10e82e1c283f4af54c3ccff177c629f7} 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+move} ()
+\begin{DoxyCompactList}\small\item\em Generate AI move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_player}{Player$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player} (string n, char s, Player\+Type t)
+\begin{DoxyCompactList}\small\item\em Construct a player with name, symbol, and type. \end{DoxyCompactList}\item 
+string {\bfseries get\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em Get player type (e.\+g., \textquotesingle{}H\textquotesingle{} or \textquotesingle{}C\textquotesingle{}). \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+symbol} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+board\+\_\+ptr} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the game board. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+board\+\_\+ptr} (\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Assign the board pointer for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_player}{Player$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} type (e.\+g., HUMAN or COMPUTER). \end{DoxyCompactList}\item 
+char {\bfseries symbol}
+\begin{DoxyCompactList}\small\item\em Player’s symbol on board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries board\+Ptr}
+\begin{DoxyCompactList}\small\item\em Pointer to the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple AI player for Connect Four. 
+
+\label{doc-constructors}
+\Hypertarget{class_smart_a_i___player_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_smart_a_i___player_a8eb7d263ff5940fc82bcc11ab9a8b3a7}\index{SmartAI\_Player@{SmartAI\_Player}!SmartAI\_Player@{SmartAI\_Player}}
+\index{SmartAI\_Player@{SmartAI\_Player}!SmartAI\_Player@{SmartAI\_Player}}
+\doxysubsubsection{\texorpdfstring{SmartAI\_Player()}{SmartAI\_Player()}}
+{\footnotesize\ttfamily \label{class_smart_a_i___player_a8eb7d263ff5940fc82bcc11ab9a8b3a7} 
+Smart\+AI\+\_\+\+Player\+::\+Smart\+AI\+\_\+\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{char}]{symbol}{}\end{DoxyParamCaption})}
+
+
+
+Construct AI player. 
+
+\hypertarget{class_smart_a_i___player_Smart}{}\doxysubsection{\texorpdfstring{AI Implementation}{AI Implementation}}\label{class_smart_a_i___player_Smart}
+This section contains all AI-\/related logics for the Connect Four game. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Connect4.\+h\item 
+\mbox{\hyperlink{_connect4_8cpp}{Connect4.\+cpp}}\end{DoxyCompactItemize}

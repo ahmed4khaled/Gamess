@@ -1,0 +1,250 @@
+\doxysection{Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board Class Reference}
+\hypertarget{class_numerical___tic_tac_toe___board}{}\label{class_numerical___tic_tac_toe___board}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+
+
+Implements Numerical Tic-\/\+Tac-\/\+Toe game logic.  
+
+
+
+
+{\ttfamily \#include $<$Numerical\+\_\+\+Tic\+Tac\+Toe.\+h$>$}
+
+Inheritance diagram for Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_numerical___tic_tac_toe___board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_numerical___tic_tac_toe___board_a19c1f07dc43c4388ccc37c0f8fd04c84}{Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the board and initializes available numbers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_numerical___tic_tac_toe___board_a9a955eaa658645cfece03f1a25b42385}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ int $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Places a number if valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_numerical___tic_tac_toe___board_ab927e8e88c22820e3b12f0e8ca1139b1}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if ANY line sums to 15. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_numerical___tic_tac_toe___board_ab87a2982e563754c9f8a1b90a94e3a70}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} loses if OPPONENT forms a line summing to 15. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_numerical___tic_tac_toe___board_a0361d2ad31b8c62c290593e2d203b856}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Draw\+: board full \& no win. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_numerical___tic_tac_toe___board_ad13b2a16d418c42f17ccc8c150c6ad7f}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Ends on win or draw. \end{DoxyCompactList}\item 
+const std\+::set$<$ int $>$ \& \mbox{\hyperlink{class_numerical___tic_tac_toe___board_a482457e9705b98ed94bd85bc537a7df2}{get\+\_\+available\+\_\+numbers}} (int player\+\_\+num) const
+\begin{DoxyCompactList}\small\item\em Returns available numbers for a given player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_numerical___tic_tac_toe___board_af3b648e7e979e9b0a54ab1c38ee32f00}{is\+\_\+cell\+\_\+empty}} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em Checks if a cell is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ int $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ int $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements Numerical Tic-\/\+Tac-\/\+Toe game logic. 
+
+Rules\+:
+\begin{DoxyItemize}
+\item \doxylink{class_board}{Board} is 3×3.
+\item \doxylink{class_player}{Player} 1 uses ODD numbers\+: \{1,3,5,7,9\}
+\item \doxylink{class_player}{Player} 2 uses EVEN numbers\+: \{2,4,6,8\}
+\item A number cannot be reused.
+\item Win\+: any row/column/diagonal summing to EXACTLY 15. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_numerical___tic_tac_toe___board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_numerical___tic_tac_toe___board_a19c1f07dc43c4388ccc37c0f8fd04c84}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{Numerical\_TicTacToe\_Board()}{Numerical\_TicTacToe\_Board()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_a19c1f07dc43c4388ccc37c0f8fd04c84} 
+Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::\+Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the board and initializes available numbers. 
+
+Constructs a Numerical Tic-\/\+Tac-\/\+Toe board.
+
+Initializes\+:
+\begin{DoxyItemize}
+\item 3×3 board filled with {\ttfamily blank\+\_\+symbol} (0)
+\item \doxylink{class_player}{Player} 1 available numbers = \{1,3,5,7,9\}
+\item \doxylink{class_player}{Player} 2 available numbers = \{2,4,6,8\} 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_numerical___tic_tac_toe___board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_numerical___tic_tac_toe___board_ad13b2a16d418c42f17ccc8c150c6ad7f}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_ad13b2a16d418c42f17ccc8c150c6ad7f} 
+bool Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ends on win or draw. 
+
+Game ends if win or draw.
+
+\begin{DoxyReturn}{Returns}
+true if game is finished. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ int $>$}}.
+
+\Hypertarget{class_numerical___tic_tac_toe___board_a482457e9705b98ed94bd85bc537a7df2}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!get\_available\_numbers@{get\_available\_numbers}}
+\index{get\_available\_numbers@{get\_available\_numbers}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{get\_available\_numbers()}{get\_available\_numbers()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_a482457e9705b98ed94bd85bc537a7df2} 
+const set$<$ int $>$ \& Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::get\+\_\+available\+\_\+numbers (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+num}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns available numbers for a given player. 
+
+Returns available unused numbers for a player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+num} & 1 → odd, 2 → even\\
+\hline
+{\em player\+\_\+num} & 1 or 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const reference to that player\textquotesingle{}s available set 
+\end{DoxyReturn}
+\Hypertarget{class_numerical___tic_tac_toe___board_af3b648e7e979e9b0a54ab1c38ee32f00}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!is\_cell\_empty@{is\_cell\_empty}}
+\index{is\_cell\_empty@{is\_cell\_empty}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_cell\_empty()}{is\_cell\_empty()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_af3b648e7e979e9b0a54ab1c38ee32f00} 
+bool Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+cell\+\_\+empty (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a cell is empty. 
+
+Checks if cell is empty. \Hypertarget{class_numerical___tic_tac_toe___board_a0361d2ad31b8c62c290593e2d203b856}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_a0361d2ad31b8c62c290593e2d203b856} 
+bool Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw\+: board full \& no win. 
+
+Draw if board is full AND no 15-\/sum line.
+
+\begin{DoxyReturn}{Returns}
+true if draw. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ int $>$}}.
+
+\Hypertarget{class_numerical___tic_tac_toe___board_ab87a2982e563754c9f8a1b90a94e3a70}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_ab87a2982e563754c9f8a1b90a94e3a70} 
+bool Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{class_player}{Player} loses if OPPONENT forms a line summing to 15. 
+
+Numerical Tic\+Tac\+Toe considers \textquotesingle{}is\+\_\+lose\textquotesingle{} as the opposite of is\+\_\+win. 
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ int $>$}}.
+
+\Hypertarget{class_numerical___tic_tac_toe___board_ab927e8e88c22820e3b12f0e8ca1139b1}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_ab927e8e88c22820e3b12f0e8ca1139b1} 
+bool Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if ANY line sums to 15. 
+
+Checks whether any row/column/diagonal sums to 15.
+
+Only checks sums when all three cells are non-\/zero.
+
+\begin{DoxyReturn}{Returns}
+true if a 15-\/sum exists. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ int $>$}}.
+
+\Hypertarget{class_numerical___tic_tac_toe___board_a9a955eaa658645cfece03f1a25b42385}\index{Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!Numerical\_TicTacToe\_Board@{Numerical\_TicTacToe\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___board_a9a955eaa658645cfece03f1a25b42385} 
+bool Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places a number if valid. 
+
+Attempts to place a number on the board.
+
+\begin{DoxyReturn}{Returns}
+true if move applied.
+\end{DoxyReturn}
+Conditions for valid move\+:
+\begin{DoxyItemize}
+\item Cell is inside the board.
+\item Cell is empty.
+\item Number belongs to correct player set (odd/even).
+\item Number has not been used before.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to \doxylink{class_move}{Move} object (row, col, number). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move was applied, false if invalid. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ int $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Numerical\+\_\+\+Tic\+Tac\+Toe.\+h\item 
+\mbox{\hyperlink{_numerical___t_t_t_8cpp}{Numerical\+\_\+\+TTT.\+cpp}}\end{DoxyCompactItemize}

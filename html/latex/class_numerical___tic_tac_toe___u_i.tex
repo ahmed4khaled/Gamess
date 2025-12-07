@@ -1,0 +1,110 @@
+\doxysection{Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI Class Reference}
+\hypertarget{class_numerical___tic_tac_toe___u_i}{}\label{class_numerical___tic_tac_toe___u_i}\index{Numerical\_TicTacToe\_UI@{Numerical\_TicTacToe\_UI}}
+
+
+Handles input and AI for Numerical Tic-\/\+Tac-\/\+Toe.  
+
+
+
+
+{\ttfamily \#include $<$Numerical\+\_\+\+Tic\+Tac\+Toe.\+h$>$}
+
+Inheritance diagram for Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_numerical___tic_tac_toe___u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_numerical___tic_tac_toe___u_i_a7d985e19d8126d4f3c9aa1a5004167bb}\label{class_numerical___tic_tac_toe___u_i_a7d985e19d8126d4f3c9aa1a5004167bb} 
+{\bfseries Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI} ()
+\begin{DoxyCompactList}\small\item\em Constructs \doxylink{class_u_i}{UI} with welcome message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_numerical___tic_tac_toe___u_i_a1f033e1aae8fdd2815943c0c84264b14}{create\+\_\+player}} (std\+::string \&name, int symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Creates a player (odd/even). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_numerical___tic_tac_toe___u_i_af0b7b7b35c835f40226838f3d0b6f1b3}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Gets move from human or AI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, int symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ int $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u_i}{UI$<$ int $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles input and AI for Numerical Tic-\/\+Tac-\/\+Toe. 
+
+\label{doc-func-members}
+\Hypertarget{class_numerical___tic_tac_toe___u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_numerical___tic_tac_toe___u_i_a1f033e1aae8fdd2815943c0c84264b14}\index{Numerical\_TicTacToe\_UI@{Numerical\_TicTacToe\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!Numerical\_TicTacToe\_UI@{Numerical\_TicTacToe\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___u_i_a1f033e1aae8fdd2815943c0c84264b14} 
+\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*} Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string \&}]{name}{, }\item[{int}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Creates a player (odd/even). 
+
+Creates human or AI player.
+
+Symbol meaning\+:
+\begin{DoxyItemize}
+\item 1 → odd-\/number player
+\item 2 → even-\/number player 
+\end{DoxyItemize}\Hypertarget{class_numerical___tic_tac_toe___u_i_af0b7b7b35c835f40226838f3d0b6f1b3}\index{Numerical\_TicTacToe\_UI@{Numerical\_TicTacToe\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!Numerical\_TicTacToe\_UI@{Numerical\_TicTacToe\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_numerical___tic_tac_toe___u_i_af0b7b7b35c835f40226838f3d0b6f1b3} 
+\mbox{\hyperlink{class_move}{Move}}$<$ int $>$ \texorpdfstring{$\ast$}{*} Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets move from human or AI. 
+
+Requests move from human or generates AI move.
+
+Human\+: Enter\+: row col number
+
+Computer\+: Picks\+:
+\begin{DoxyItemize}
+\item random available number from correct set
+\item random empty cell
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_move}{Move} pointer 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ int $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Numerical\+\_\+\+Tic\+Tac\+Toe.\+h\item 
+\mbox{\hyperlink{_numerical___t_t_t_8cpp}{Numerical\+\_\+\+TTT.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\doxysection{Diamond\+AIPlayer Class Reference}
+\hypertarget{class_diamond_a_i_player}{}\label{class_diamond_a_i_player}\index{DiamondAIPlayer@{DiamondAIPlayer}}
+
+
+AI player using minimax with alpha-\/beta pruning for Diamond Tic-\/\+Tac-\/\+Toe.  
+
+
+
+
+{\ttfamily \#include $<$Diamond\+\_\+\+TTT.\+h$>$}
+
+Inheritance diagram for Diamond\+AIPlayer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_diamond_a_i_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diamond_a_i_player_a1b0991e0f4f0337594de073813b2f6be}{Diamond\+AIPlayer}} (string \mbox{\hyperlink{class_player_af0ad0d4ca8584d23a98c723cd703a4f6}{name}}, char \mbox{\hyperlink{class_player_a272d6c4dab769930d4f8074918e7708a}{symbol}})
+\begin{DoxyCompactList}\small\item\em Constructs an AI player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_diamond_a_i_player_a13ae8dde8422bf0bd099e0faf698dc9b}{get\+\_\+best\+\_\+move}} ()
+\begin{DoxyCompactList}\small\item\em Computes and returns the best possible move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_player}{Player$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player} (string n, char s, Player\+Type t)
+\begin{DoxyCompactList}\small\item\em Construct a player with name, symbol, and type. \end{DoxyCompactList}\item 
+string {\bfseries get\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em Get player type (e.\+g., \textquotesingle{}H\textquotesingle{} or \textquotesingle{}C\textquotesingle{}). \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+symbol} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+board\+\_\+ptr} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the game board. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+board\+\_\+ptr} (\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Assign the board pointer for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_player}{Player$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} type (e.\+g., HUMAN or COMPUTER). \end{DoxyCompactList}\item 
+char {\bfseries symbol}
+\begin{DoxyCompactList}\small\item\em Player’s symbol on board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries board\+Ptr}
+\begin{DoxyCompactList}\small\item\em Pointer to the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AI player using minimax with alpha-\/beta pruning for Diamond Tic-\/\+Tac-\/\+Toe. 
+
+\label{doc-constructors}
+\Hypertarget{class_diamond_a_i_player_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_diamond_a_i_player_a1b0991e0f4f0337594de073813b2f6be}\index{DiamondAIPlayer@{DiamondAIPlayer}!DiamondAIPlayer@{DiamondAIPlayer}}
+\index{DiamondAIPlayer@{DiamondAIPlayer}!DiamondAIPlayer@{DiamondAIPlayer}}
+\doxysubsubsection{\texorpdfstring{DiamondAIPlayer()}{DiamondAIPlayer()}}
+{\footnotesize\ttfamily \label{class_diamond_a_i_player_a1b0991e0f4f0337594de073813b2f6be} 
+Diamond\+AIPlayer\+::\+Diamond\+AIPlayer (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{char}]{symbol}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an AI player. 
+
+Constructs AI player. 
+
+\label{doc-func-members}
+\Hypertarget{class_diamond_a_i_player_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_diamond_a_i_player_a13ae8dde8422bf0bd099e0faf698dc9b}\index{DiamondAIPlayer@{DiamondAIPlayer}!get\_best\_move@{get\_best\_move}}
+\index{get\_best\_move@{get\_best\_move}!DiamondAIPlayer@{DiamondAIPlayer}}
+\doxysubsubsection{\texorpdfstring{get\_best\_move()}{get\_best\_move()}}
+{\footnotesize\ttfamily \label{class_diamond_a_i_player_a13ae8dde8422bf0bd099e0faf698dc9b} 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Diamond\+AIPlayer\+::get\+\_\+best\+\_\+move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Computes and returns the best possible move. 
+
+Computes best move using minimax algorithm. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Diamond\+\_\+\+TTT.\+h\item 
+Diamond\+\_\+\+TTT.\+cpp\end{DoxyCompactItemize}

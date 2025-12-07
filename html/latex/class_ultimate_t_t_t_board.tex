@@ -1,0 +1,223 @@
+\doxysection{Ultimate\+TTTBoard Class Reference}
+\hypertarget{class_ultimate_t_t_t_board}{}\label{class_ultimate_t_t_t_board}\index{UltimateTTTBoard@{UltimateTTTBoard}}
+
+
+Implements the logic for Ultimate Tic-\/\+Tac-\/\+Toe.  
+
+
+
+
+{\ttfamily \#include $<$Ultimate\+TTT.\+h$>$}
+
+Inheritance diagram for Ultimate\+TTTBoard\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ultimate_t_t_t_board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ultimate_t_t_t_board_ab4129846f22b0fcea1f0feb46abb566b}{Ultimate\+TTTBoard}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the full 9×9 Ultimate Tic-\/\+Tac-\/\+Toe board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_a3e1db9145075ac66dd431e881f2c6d82}{is\+\_\+cell\+\_\+allowed}} (int full\+\_\+r, int full\+\_\+c) const
+\begin{DoxyCompactList}\small\item\em Checks if a full-\/board cell is legal to play. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{class_ultimate_t_t_t_board_ad3cb830fcc25aa00f3ce493f5c05a6b7}{get\+\_\+next\+\_\+required}} () const
+\begin{DoxyCompactList}\small\item\em Returns the next required sub-\/board (or -\/1,-\/1). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \mbox{\hyperlink{class_ultimate_t_t_t_board_ab4257eda0dc3b07e58a77823df998109}{get\+\_\+board\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the 9×9 matrix for display/\+UI. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_a4bb2a5cf817ce693fa51415df26c5917}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Updates the board with a move and adjusts next\+Required accordingly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_aa2f10c243fe29014ebae01edf30f9afb}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Checks if the player has won the main board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_a8c40c00b9b5f62ff521782e67d89f776}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Checks if the player has lost (opponent has main-\/board win). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_a72850def763b9bb9bbfb0e6b2ca7399d}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Checks if the entire game is a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_a50e3515e33342f4ea44a2aaec5f8b984}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Determines if the game has ended. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ultimate_t_t_t_board_abfea6383e22c5ab6c46b94e871ec662a}{check\+Main\+Win}} (char s)
+\begin{DoxyCompactList}\small\item\em Checks if a symbol has 3-\/in-\/a-\/row on the main 3×3 board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the logic for Ultimate Tic-\/\+Tac-\/\+Toe. 
+
+The board consists of\+:
+\begin{DoxyItemize}
+\item A 9×9 grid.
+\item Divided into 3×3 sub-\/boards (each 3×3).
+\item Players win a sub-\/board using normal XO rules.
+\item Winning sub-\/boards populate a 3×3 "{}main board"{}.
+\item Winning the main board (3-\/in-\/a-\/row of sub-\/boards) wins the game.
+\end{DoxyItemize}
+
+Also enforces “forced board rules”\+:
+\begin{DoxyItemize}
+\item Your opponent\textquotesingle{}s move determines the sub-\/board you must play in next.
+\item If that sub-\/board is closed (won/tied), you may play anywhere legal. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_ultimate_t_t_t_board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ultimate_t_t_t_board_ab4129846f22b0fcea1f0feb46abb566b}\index{UltimateTTTBoard@{UltimateTTTBoard}!UltimateTTTBoard@{UltimateTTTBoard}}
+\index{UltimateTTTBoard@{UltimateTTTBoard}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{UltimateTTTBoard()}{UltimateTTTBoard()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_ab4129846f22b0fcea1f0feb46abb566b} 
+Ultimate\+TTTBoard\+::\+Ultimate\+TTTBoard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the full 9×9 Ultimate Tic-\/\+Tac-\/\+Toe board. 
+
+Initializes the 9×9 board and sets all small boards as open. 
+
+\label{doc-func-members}
+\Hypertarget{class_ultimate_t_t_t_board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ultimate_t_t_t_board_abfea6383e22c5ab6c46b94e871ec662a}\index{UltimateTTTBoard@{UltimateTTTBoard}!checkMainWin@{checkMainWin}}
+\index{checkMainWin@{checkMainWin}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{checkMainWin()}{checkMainWin()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_abfea6383e22c5ab6c46b94e871ec662a} 
+bool Ultimate\+TTTBoard\+::check\+Main\+Win (\begin{DoxyParamCaption}\item[{char}]{s}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a symbol has 3-\/in-\/a-\/row on the main 3×3 board. 
+
+Checks victory on the main 3×3 board. \Hypertarget{class_ultimate_t_t_t_board_a50e3515e33342f4ea44a2aaec5f8b984}\index{UltimateTTTBoard@{UltimateTTTBoard}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_a50e3515e33342f4ea44a2aaec5f8b984} 
+bool Ultimate\+TTTBoard\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the game has ended. 
+
+Overall end condition. 
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_ultimate_t_t_t_board_ab4257eda0dc3b07e58a77823df998109}\index{UltimateTTTBoard@{UltimateTTTBoard}!get\_board\_matrix@{get\_board\_matrix}}
+\index{get\_board\_matrix@{get\_board\_matrix}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{get\_board\_matrix()}{get\_board\_matrix()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_ab4257eda0dc3b07e58a77823df998109} 
+vector$<$ vector$<$ char $>$ $>$ Ultimate\+TTTBoard\+::get\+\_\+board\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the 9×9 matrix for display/\+UI. 
+
+Returns the 9×9 board matrix. \Hypertarget{class_ultimate_t_t_t_board_ad3cb830fcc25aa00f3ce493f5c05a6b7}\index{UltimateTTTBoard@{UltimateTTTBoard}!get\_next\_required@{get\_next\_required}}
+\index{get\_next\_required@{get\_next\_required}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{get\_next\_required()}{get\_next\_required()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_ad3cb830fcc25aa00f3ce493f5c05a6b7} 
+pair$<$ int, int $>$ Ultimate\+TTTBoard\+::get\+\_\+next\+\_\+required (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the next required sub-\/board (or -\/1,-\/1). 
+
+Returns the sub-\/board requirement for the next move. \Hypertarget{class_ultimate_t_t_t_board_a3e1db9145075ac66dd431e881f2c6d82}\index{UltimateTTTBoard@{UltimateTTTBoard}!is\_cell\_allowed@{is\_cell\_allowed}}
+\index{is\_cell\_allowed@{is\_cell\_allowed}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{is\_cell\_allowed()}{is\_cell\_allowed()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_a3e1db9145075ac66dd431e881f2c6d82} 
+bool Ultimate\+TTTBoard\+::is\+\_\+cell\+\_\+allowed (\begin{DoxyParamCaption}\item[{int}]{full\+\_\+r}{, }\item[{int}]{full\+\_\+c}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a full-\/board cell is legal to play. 
+
+Determines if a move into (full\+\_\+r,full\+\_\+c) is legal under forced rules. \Hypertarget{class_ultimate_t_t_t_board_a72850def763b9bb9bbfb0e6b2ca7399d}\index{UltimateTTTBoard@{UltimateTTTBoard}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_a72850def763b9bb9bbfb0e6b2ca7399d} 
+bool Ultimate\+TTTBoard\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the entire game is a draw. 
+
+Checks if the game is a draw. 
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_ultimate_t_t_t_board_a8c40c00b9b5f62ff521782e67d89f776}\index{UltimateTTTBoard@{UltimateTTTBoard}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_a8c40c00b9b5f62ff521782e67d89f776} 
+bool Ultimate\+TTTBoard\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the player has lost (opponent has main-\/board win). 
+
+Determines if a player has lost (opponent won). 
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_ultimate_t_t_t_board_aa2f10c243fe29014ebae01edf30f9afb}\index{UltimateTTTBoard@{UltimateTTTBoard}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_aa2f10c243fe29014ebae01edf30f9afb} 
+bool Ultimate\+TTTBoard\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the player has won the main board. 
+
+Determines if a given player has won. 
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_ultimate_t_t_t_board_a4bb2a5cf817ce693fa51415df26c5917}\index{UltimateTTTBoard@{UltimateTTTBoard}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!UltimateTTTBoard@{UltimateTTTBoard}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_ultimate_t_t_t_board_a4bb2a5cf817ce693fa51415df26c5917} 
+bool Ultimate\+TTTBoard\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the board with a move and adjusts next\+Required accordingly. 
+
+Applies move and determines next\+Required. 
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ultimate\+TTT.\+h\item 
+Ultimate\+TTT.\+cpp\end{DoxyCompactItemize}

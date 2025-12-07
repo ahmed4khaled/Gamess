@@ -1,0 +1,87 @@
+\doxysection{Infinity\+Player\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_infinity_player}{}\label{class_infinity_player}\index{InfinityPlayer$<$ T $>$@{InfinityPlayer$<$ T $>$}}
+
+
+\doxylink{class_player}{Player} class for Infinity Tic-\/\+Tac-\/\+Toe.  
+
+
+
+
+{\ttfamily \#include $<$Infinity\+Tic\+Tac\+Toe.\+h$>$}
+
+Inheritance diagram for Infinity\+Player\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_infinity_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_infinity_player_a14028ccbe6ec47d6c182a03f9192353a}{Infinity\+Player}} (std\+::string \mbox{\hyperlink{class_player_af0ad0d4ca8584d23a98c723cd703a4f6}{name}}, T \mbox{\hyperlink{class_player_a272d6c4dab769930d4f8074918e7708a}{symbol}}, Player\+Type \mbox{\hyperlink{class_player_a81a15b1b507fd5f2157fb15bf0fd283f}{type}})
+\begin{DoxyCompactList}\small\item\em Construct player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_player}{Player$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Player} (string n, T s, Player\+Type t)
+\begin{DoxyCompactList}\small\item\em Construct a player with name, symbol, and type. \end{DoxyCompactList}\item 
+string {\bfseries get\+\_\+name} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries get\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em Get player type (e.\+g., \textquotesingle{}H\textquotesingle{} or \textquotesingle{}C\textquotesingle{}). \end{DoxyCompactList}\item 
+T {\bfseries get\+\_\+symbol} () const
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}}$<$ T $>$ \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+board\+\_\+ptr} () const
+\begin{DoxyCompactList}\small\item\em Get a pointer to the game board. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+board\+\_\+ptr} (\mbox{\hyperlink{class_board}{Board}}$<$ T $>$ \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Assign the board pointer for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_player}{Player$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} name. \end{DoxyCompactList}\item 
+Player\+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} type (e.\+g., HUMAN or COMPUTER). \end{DoxyCompactList}\item 
+T {\bfseries symbol}
+\begin{DoxyCompactList}\small\item\em Player’s symbol on board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}}$<$ T $>$ \texorpdfstring{$\ast$}{*} {\bfseries board\+Ptr}
+\begin{DoxyCompactList}\small\item\em Pointer to the game board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Infinity\+Player$<$ T $>$}
+\doxylink{class_player}{Player} class for Infinity Tic-\/\+Tac-\/\+Toe. 
+
+\label{doc-constructors}
+\Hypertarget{class_infinity_player_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_infinity_player_a14028ccbe6ec47d6c182a03f9192353a}\index{InfinityPlayer$<$ T $>$@{InfinityPlayer$<$ T $>$}!InfinityPlayer@{InfinityPlayer}}
+\index{InfinityPlayer@{InfinityPlayer}!InfinityPlayer$<$ T $>$@{InfinityPlayer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{InfinityPlayer()}{InfinityPlayer()}}
+{\footnotesize\ttfamily \label{class_infinity_player_a14028ccbe6ec47d6c182a03f9192353a} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_infinity_player}{Infinity\+Player}}$<$ T $>$\+::\+Infinity\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{T}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Construct player. 
+
+\doxylink{class_infinity_player}{Infinity\+Player} implementations infinity variant of player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & player name \\
+\hline
+{\em symbol} & player symbol \\
+\hline
+{\em type} & player type \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_infinity_tic_tac_toe_8h}{Infinity\+Tic\+Tac\+Toe.\+h}}\item 
+\mbox{\hyperlink{_infinity_tic_tac_toe_8cpp}{Infinity\+Tic\+Tac\+Toe.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,189 @@
+\doxysection{Word\+\_\+\+Board Class Reference}
+\hypertarget{class_word___board}{}\label{class_word___board}\index{Word\_Board@{Word\_Board}}
+
+
+Implements a 3×3 word-\/forming game where players place letters.  
+
+
+
+
+{\ttfamily \#include $<$Word\+\_\+\+Board.\+h$>$}
+
+Inheritance diagram for Word\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_word___board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_word___board_a454d8c2dc392d395c04965fc225d27c7}{Word\+\_\+\+Board}} (const std\+::string \&dic\+\_\+path="{}dic.\+txt"{}, char blank\+Symbol=\textquotesingle{}-\/\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Initializes the board and loads dictionary from file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word___board_a38df9f9c8ee882efe6be49caa8f49e17}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Places a letter on the board and checks for word formation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word___board_ae979d62a555279816687e1f7cfa0ccee}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em The player wins if their last move formed a valid word. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word___board_a0f959cb00d8bfa37c69930e6bf46d3ba}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em There is no explicit lose condition in this game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word___board_a2711a5163435141ff7e87bee962306b2}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Draw\+: board full and no word was formed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_word___board_a21bcd59e08df0a5bdc8c82070e3b1cc0}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Game over when someone forms a word or when board is full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a 3×3 word-\/forming game where players place letters. 
+
+Game Rules\+:
+\begin{DoxyItemize}
+\item \doxylink{class_board}{Board} is 3×3 and starts empty (\textquotesingle{}-\/\textquotesingle{}).
+\item A player places a letter (A–Z) each turn.
+\item After a placement, all lines passing through that cell (row, column, diag, anti-\/diag) are checked.
+\item If any line forms a {\itshape valid 3-\/letter word} from the dictionary, the current player immediately wins.
+\item If the board becomes full with no word formed, the game is a draw.
+\end{DoxyItemize}
+
+Dictionary\+:
+\begin{DoxyItemize}
+\item Loaded from {\ttfamily dic.\+txt}.
+\item Only 3-\/letter uppercase words are accepted. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_word___board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_word___board_a454d8c2dc392d395c04965fc225d27c7}\index{Word\_Board@{Word\_Board}!Word\_Board@{Word\_Board}}
+\index{Word\_Board@{Word\_Board}!Word\_Board@{Word\_Board}}
+\doxysubsubsection{\texorpdfstring{Word\_Board()}{Word\_Board()}}
+{\footnotesize\ttfamily \label{class_word___board_a454d8c2dc392d395c04965fc225d27c7} 
+Word\+\_\+\+Board\+::\+Word\+\_\+\+Board (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dic\+\_\+path}{ = {\ttfamily "{}dic.txt"{}}, }\item[{char}]{blank\+Symbol}{ = {\ttfamily \textquotesingle{}-\/\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Initializes the board and loads dictionary from file. 
+
+Constructs the board and loads dictionary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dic\+\_\+path} & Path to dictionary file (default "{}dic.\+txt"{}). \\
+\hline
+{\em blank\+Symbol} & Character that represents an empty cell. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_word___board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_word___board_a21bcd59e08df0a5bdc8c82070e3b1cc0}\index{Word\_Board@{Word\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!Word\_Board@{Word\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_word___board_a21bcd59e08df0a5bdc8c82070e3b1cc0} 
+bool Word\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Game over when someone forms a word or when board is full. 
+
+Game ends when someone forms a word or board is full. 
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_word___board_a2711a5163435141ff7e87bee962306b2}\index{Word\_Board@{Word\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!Word\_Board@{Word\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_word___board_a2711a5163435141ff7e87bee962306b2} 
+bool Word\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw\+: board full and no word was formed. 
+
+Draw if full board and no winner. 
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_word___board_a0f959cb00d8bfa37c69930e6bf46d3ba}\index{Word\_Board@{Word\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!Word\_Board@{Word\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_word___board_a0f959cb00d8bfa37c69930e6bf46d3ba} 
+bool Word\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+There is no explicit lose condition in this game. 
+
+No losing mechanic in the word game. 
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_word___board_ae979d62a555279816687e1f7cfa0ccee}\index{Word\_Board@{Word\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!Word\_Board@{Word\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_word___board_ae979d62a555279816687e1f7cfa0ccee} 
+bool Word\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The player wins if their last move formed a valid word. 
+
+Win if player\textquotesingle{}s last move formed a word. 
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_word___board_a38df9f9c8ee882efe6be49caa8f49e17}\index{Word\_Board@{Word\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!Word\_Board@{Word\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_word___board_a38df9f9c8ee882efe6be49caa8f49e17} 
+bool Word\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places a letter on the board and checks for word formation. 
+
+Attempts to place a letter at (r,c) and checks word-\/formation.
+
+\begin{DoxyReturn}{Returns}
+true if move is valid and applied. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Word\+\_\+\+Board.\+h\item 
+Word\+\_\+\+Board.\+cpp\end{DoxyCompactItemize}

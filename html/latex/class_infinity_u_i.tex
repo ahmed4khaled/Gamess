@@ -1,0 +1,119 @@
+\doxysection{Infinity\+UI\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_infinity_u_i}{}\label{class_infinity_u_i}\index{InfinityUI$<$ T $>$@{InfinityUI$<$ T $>$}}
+
+
+\doxylink{class_u_i}{UI} (console) for Infinity Tic-\/\+Tac-\/\+Toe.  
+
+
+
+
+{\ttfamily \#include $<$Infinity\+Tic\+Tac\+Toe.\+h$>$}
+
+Inheritance diagram for Infinity\+UI\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_infinity_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_infinity_u_i_a8ae2989a8e092f5b87d3cdfb912cb082}{Infinity\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Construct \doxylink{class_u_i}{UI} and show short welcome. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_infinity_u_i_a6221c610c10e9e4237eae4eff2168dea}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Ask player for move (human input) or generate random valid move for computer. \end{DoxyCompactList}\item 
+\Hypertarget{class_infinity_u_i_aa1221a20b3eda43073b8b4e4e96accc8}\label{class_infinity_u_i_aa1221a20b3eda43073b8b4e4e96accc8} 
+\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+player} (std\+::string \&name, T symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{class_infinity_player}{Infinity\+Player} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, T symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ T $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u_i}{UI$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Infinity\+UI$<$ T $>$}
+\doxylink{class_u_i}{UI} (console) for Infinity Tic-\/\+Tac-\/\+Toe. 
+
+Provides get\+\_\+move (human or random AI) and create\+\_\+player override to produce \doxylink{class_infinity_player}{Infinity\+Player}. 
+
+\label{doc-constructors}
+\Hypertarget{class_infinity_u_i_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_infinity_u_i_a8ae2989a8e092f5b87d3cdfb912cb082}\index{InfinityUI$<$ T $>$@{InfinityUI$<$ T $>$}!InfinityUI@{InfinityUI}}
+\index{InfinityUI@{InfinityUI}!InfinityUI$<$ T $>$@{InfinityUI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{InfinityUI()}{InfinityUI()}}
+{\footnotesize\ttfamily \label{class_infinity_u_i_a8ae2989a8e092f5b87d3cdfb912cb082} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_infinity_u_i}{Infinity\+UI}}$<$ T $>$\+::\+Infinity\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construct \doxylink{class_u_i}{UI} and show short welcome. 
+
+\doxylink{class_infinity_u_i}{Infinity\+UI} implementations infinity variant of user interface. 
+
+\label{doc-func-members}
+\Hypertarget{class_infinity_u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_infinity_u_i_a6221c610c10e9e4237eae4eff2168dea}\index{InfinityUI$<$ T $>$@{InfinityUI$<$ T $>$}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!InfinityUI$<$ T $>$@{InfinityUI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_infinity_u_i_a6221c610c10e9e4237eae4eff2168dea} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_move}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_infinity_u_i}{Infinity\+UI}}$<$ T $>$\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ask player for move (human input) or generate random valid move for computer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & pointer to player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_move}{Move$<$\+T$>$}\texorpdfstring{$\ast$}{*} (newed; caller/manager is responsible for deletion if needed) 
+\end{DoxyReturn}
+Human player\+: prompt for input until valid move is entered.
+
+Simple AI\+: choose a random empty cell.
+
+\begin{DoxyNote}{Note}
+This should not happen as game over is checked before AI move.
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_infinity_tic_tac_toe_8h}{Infinity\+Tic\+Tac\+Toe.\+h}}\item 
+\mbox{\hyperlink{_infinity_tic_tac_toe_8cpp}{Infinity\+Tic\+Tac\+Toe.\+cpp}}\end{DoxyCompactItemize}

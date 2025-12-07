@@ -1,0 +1,92 @@
+\doxysection{Word\+\_\+\+UI Class Reference}
+\hypertarget{class_word___u_i}{}\label{class_word___u_i}\index{Word\_UI@{Word\_UI}}
+
+
+User Interface class for the Word Game (3×3 letter placement).  
+
+
+
+
+{\ttfamily \#include $<$Word\+\_\+\+UI.\+h$>$}
+
+Inheritance diagram for Word\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_word___u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_word___u_i_a262c4743654620571173b72f94bb2ebf}\label{class_word___u_i_a262c4743654620571173b72f94bb2ebf} 
+{\bfseries Word\+\_\+\+UI} ()
+\begin{DoxyCompactList}\small\item\em Initializes \doxylink{class_u_i}{UI} (seed randomizer). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_word___u_i_af531d7f4e2ed7ac86f37fe17c2f83365}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Gets a move from human or computer player. \end{DoxyCompactList}\item 
+\Hypertarget{class_word___u_i_adac6ad1a99ab941cd65f6c2eda4f67aa}\label{class_word___u_i_adac6ad1a99ab941cd65f6c2eda4f67aa} 
+\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+player} (std\+::string \&name, char symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Creates either a human or AI player. \end{DoxyCompactList}\item 
+\Hypertarget{class_word___u_i_a1d966f883f24326a80b5f3a2f6a8ebb9}\label{class_word___u_i_a1d966f883f24326a80b5f3a2f6a8ebb9} 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&matrix) const override
+\begin{DoxyCompactList}\small\item\em Displays the 3×3 letter board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+User Interface class for the Word Game (3×3 letter placement). 
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Reading moves from human players.
+\item Displaying the board in a readable format.
+\item Providing simple AI behavior\+: • Try immediate win. • Try blocking opponent’s immediate win. • Choose heuristic best move. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_word___u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_word___u_i_af531d7f4e2ed7ac86f37fe17c2f83365}\index{Word\_UI@{Word\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!Word\_UI@{Word\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_word___u_i_af531d7f4e2ed7ac86f37fe17c2f83365} 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Word\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a move from human or computer player. 
+
+
+
+Implements \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Word\+\_\+\+UI.\+h\item 
+Word\+\_\+\+UI.\+cpp\end{DoxyCompactItemize}

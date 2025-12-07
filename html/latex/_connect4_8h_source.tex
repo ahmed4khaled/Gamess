@@ -1,0 +1,52 @@
+\doxysection{Connect4.\+h}
+\hypertarget{_connect4_8h_source}{}\label{_connect4_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONNECT4\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONNECT4\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_classes.h"{}}\ \ \ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connect4___board_a10198a913fa7421614a88d74ee2c6104}{Connect4\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_board_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_connect4___board_a10198a913fa7421614a88d74ee2c6104}{Connect4\_Board}}();}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connect4___board_aa651babccc5647c6802509efae897f08}{update\_board}}(\mbox{\hyperlink{class_move}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connect4___board_af1f38d49fb6fdfb966c6323cb80f759e}{is\_win}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connect4___board_a1ee3a406d7b9f3c76574f803a543f487}{is\_lose}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connect4___board_a99cd634d74d1bf6ef085698cea08987f}{is\_draw}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connect4___board_a46e3c75176dcff6df32c1168806c599e}{game\_is\_over}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_dir(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keywordtype}{int}\ dr,\ \textcolor{keywordtype}{int}\ dc,\ \textcolor{keywordtype}{char}\ s);}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_smart_a_i___player_a8eb7d263ff5940fc82bcc11ab9a8b3a7}{SmartAI\_Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_player_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_smart_a_i___player_a8eb7d263ff5940fc82bcc11ab9a8b3a7}{SmartAI\_Player}}(std::string\ \mbox{\hyperlink{class_player_af0ad0d4ca8584d23a98c723cd703a4f6}{name}},\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_player_a272d6c4dab769930d4f8074918e7708a}{symbol}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_smart_a_i___player_a10e82e1c283f4af54c3ccff177c629f7}{get\_move}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ evaluate();}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connect4___u_i_a673169be93fe87b157b8c1ada59efdaa}{Connect4\_UI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}{UI}}<char>\ \{}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:\ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_connect4___u_i_a673169be93fe87b157b8c1ada59efdaa}{Connect4\_UI}}();}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_connect4___u_i_a332a0b53476266fe2fb522c60c44edd9}{\string~Connect4\_UI}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_connect4___u_i_a9d2331347a852dbc8b72d4c87ef023e5}{get\_move}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

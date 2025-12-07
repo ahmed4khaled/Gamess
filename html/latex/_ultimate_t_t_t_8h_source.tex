@@ -1,0 +1,52 @@
+\doxysection{Ultimate\+TTT.\+h}
+\hypertarget{_ultimate_t_t_t_8h_source}{}\label{_ultimate_t_t_t_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ULTIMATETTT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ULTIMATETTT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ultimate_t_t_t_board_ab4129846f22b0fcea1f0feb46abb566b}{UltimateTTTBoard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_board_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::vector<char>>\ mainBoardWinners;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::pair<int,int>\ nextRequired;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSmallClosed(\textcolor{keywordtype}{int}\ br,\ \textcolor{keywordtype}{int}\ bc)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{char}\ checkSmallWinner(\textcolor{keywordtype}{int}\ br,\ \textcolor{keywordtype}{int}\ bc)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_ultimate_t_t_t_board_ab4129846f22b0fcea1f0feb46abb566b}{UltimateTTTBoard}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_a3e1db9145075ac66dd431e881f2c6d82}{is\_cell\_allowed}}(\textcolor{keywordtype}{int}\ full\_r,\ \textcolor{keywordtype}{int}\ full\_c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::pair<int,int>\ \mbox{\hyperlink{class_ultimate_t_t_t_board_ad3cb830fcc25aa00f3ce493f5c05a6b7}{get\_next\_required}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::vector<std::vector<char>>\ \mbox{\hyperlink{class_ultimate_t_t_t_board_ab4257eda0dc3b07e58a77823df998109}{get\_board\_matrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_a4bb2a5cf817ce693fa51415df26c5917}{update\_board}}(\mbox{\hyperlink{class_move}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_aa2f10c243fe29014ebae01edf30f9afb}{is\_win}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_a8c40c00b9b5f62ff521782e67d89f776}{is\_lose}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_a72850def763b9bb9bbfb0e6b2ca7399d}{is\_draw}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_a50e3515e33342f4ea44a2aaec5f8b984}{game\_is\_over}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ultimate_t_t_t_board_abfea6383e22c5ab6c46b94e871ec662a}{checkMainWin}}(\textcolor{keywordtype}{char}\ s);}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ultimate_t_t_t___u_i_ac2df2328de170bf915ecc8a680bac19a}{UltimateTTT\_UI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}{UI}}<char>\ \{}
+\DoxyCodeLine{00119\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_ultimate_t_t_t___u_i_ac2df2328de170bf915ecc8a680bac19a}{UltimateTTT\_UI}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_ultimate_t_t_t___u_i_a6b1c02d6bf2406763925d8492531599a}{get\_move}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ p)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ULTIMATETTT\_H}}
+
+\end{DoxyCode}

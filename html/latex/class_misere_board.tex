@@ -1,0 +1,173 @@
+\doxysection{Misere\+Board Class Reference}
+\hypertarget{class_misere_board}{}\label{class_misere_board}\index{MisereBoard@{MisereBoard}}
+
+
+Implements Misère Tic-\/\+Tac-\/\+Toe (avoid making 3-\/in-\/a-\/row).  
+
+
+
+
+{\ttfamily \#include $<$Misere\+\_\+\+TICTAKTOE.\+h$>$}
+
+Inheritance diagram for Misere\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_misere_board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_misere_board_a69a649f4cc894c0c26a9da8d5c2323d1}{Misere\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a 3×3 board with all cells = \textquotesingle{}-\/\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_misere_board_af7446db169138ecdb5eafba736f63bfe}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Places a symbol on the board if the move is legal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_misere_board_a899ab5f6a8b2f3d6166867b7fbe5e39a}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} wins if the opponent just created 3-\/in-\/a-\/row. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_misere_board_ac30519f8489903d818ad156fcd8563fb}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} loses if THEY create 3-\/in-\/a-\/row. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_misere_board_ab55248aa7dbb9a89bc8df89425b50d7b}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Draw if full board and no one loses. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_misere_board_a9b6348c4a3ce3ec8c91ed5aa1c66ccab}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Ends when someone loses or board is full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements Misère Tic-\/\+Tac-\/\+Toe (avoid making 3-\/in-\/a-\/row). 
+
+Rules\+:
+\begin{DoxyItemize}
+\item Standard 3×3 grid.
+\item Players place X or O normally.
+\item The player who {\bfseries{forms}} a 3-\/in-\/a-\/row {\bfseries{loses}}, not wins.
+\item If the board becomes full without anyone forming 3-\/in-\/a-\/row, the game is a draw. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_misere_board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_misere_board_a69a649f4cc894c0c26a9da8d5c2323d1}\index{MisereBoard@{MisereBoard}!MisereBoard@{MisereBoard}}
+\index{MisereBoard@{MisereBoard}!MisereBoard@{MisereBoard}}
+\doxysubsubsection{\texorpdfstring{MisereBoard()}{MisereBoard()}}
+{\footnotesize\ttfamily \label{class_misere_board_a69a649f4cc894c0c26a9da8d5c2323d1} 
+Misere\+Board\+::\+Misere\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a 3×3 board with all cells = \textquotesingle{}-\/\textquotesingle{}. 
+
+Constructs empty 3×3 board. 
+
+\label{doc-func-members}
+\Hypertarget{class_misere_board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_misere_board_a9b6348c4a3ce3ec8c91ed5aa1c66ccab}\index{MisereBoard@{MisereBoard}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!MisereBoard@{MisereBoard}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_misere_board_a9b6348c4a3ce3ec8c91ed5aa1c66ccab} 
+bool Misere\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ends when someone loses or board is full. 
+
+Game ends if win, lose, or draw. 
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_misere_board_ab55248aa7dbb9a89bc8df89425b50d7b}\index{MisereBoard@{MisereBoard}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!MisereBoard@{MisereBoard}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_misere_board_ab55248aa7dbb9a89bc8df89425b50d7b} 
+bool Misere\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw if full board and no one loses. 
+
+Draw = full board and nobody lost. 
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_misere_board_ac30519f8489903d818ad156fcd8563fb}\index{MisereBoard@{MisereBoard}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!MisereBoard@{MisereBoard}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_misere_board_ac30519f8489903d818ad156fcd8563fb} 
+bool Misere\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{class_player}{Player} loses if THEY create 3-\/in-\/a-\/row. 
+
+\doxylink{class_player}{Player} loses if they form 3-\/in-\/a-\/row. 
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_misere_board_a899ab5f6a8b2f3d6166867b7fbe5e39a}\index{MisereBoard@{MisereBoard}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!MisereBoard@{MisereBoard}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_misere_board_a899ab5f6a8b2f3d6166867b7fbe5e39a} 
+bool Misere\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{class_player}{Player} wins if the opponent just created 3-\/in-\/a-\/row. 
+
+\doxylink{class_player}{Player} wins if opponent loses. 
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_misere_board_af7446db169138ecdb5eafba736f63bfe}\index{MisereBoard@{MisereBoard}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!MisereBoard@{MisereBoard}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_misere_board_af7446db169138ecdb5eafba736f63bfe} 
+bool Misere\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places a symbol on the board if the move is legal. 
+
+Attempts to place symbol on board.
+
+\begin{DoxyReturn}{Returns}
+true if move was applied. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Misere\+\_\+\+TICTAKTOE.\+h\item 
+misere\+\_\+tictactoe.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\doxysection{Five\+By\+Five\+\_\+\+UI Class Reference}
+\hypertarget{class_five_by_five___u_i}{}\label{class_five_by_five___u_i}\index{FiveByFive\_UI@{FiveByFive\_UI}}
+
+
+Handles all user interaction for the 5×5 Tic-\/\+Tac-\/\+Toe game.  
+
+
+
+
+{\ttfamily \#include $<$Five\+By\+Five\+\_\+\+UI.\+h$>$}
+
+Inheritance diagram for Five\+By\+Five\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_five_by_five___u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_five_by_five___u_i_ae73c3a9969789f012f811ef2a65ebe28}{Five\+By\+Five\+\_\+\+UI}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_u_i}{UI} with default board size 2 for display formatting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_five_by_five___u_i_a45b8535b223da4686e18fa5b42d33c9b}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Requests a move from the given player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_five_by_five___u_i_a9cdcaffb5819e9e63a616e0e5f0327f7}{create\+\_\+player}} (std\+::string \&name, char symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Creates a player (human or computer). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_five_by_five___u_i_a0d43d388459d99f51a19e8ec539d9839}{display\+\_\+board\+\_\+matrix}} (const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&matrix) const override
+\begin{DoxyCompactList}\small\item\em Displays the current board state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles all user interaction for the 5×5 Tic-\/\+Tac-\/\+Toe game. 
+
+This \doxylink{class_u_i}{UI} collects player moves, prints the board, and creates players. Also contains simple AI logic for computer players. 
+
+\label{doc-constructors}
+\Hypertarget{class_five_by_five___u_i_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_five_by_five___u_i_ae73c3a9969789f012f811ef2a65ebe28}\index{FiveByFive\_UI@{FiveByFive\_UI}!FiveByFive\_UI@{FiveByFive\_UI}}
+\index{FiveByFive\_UI@{FiveByFive\_UI}!FiveByFive\_UI@{FiveByFive\_UI}}
+\doxysubsubsection{\texorpdfstring{FiveByFive\_UI()}{FiveByFive\_UI()}}
+{\footnotesize\ttfamily \label{class_five_by_five___u_i_ae73c3a9969789f012f811ef2a65ebe28} 
+Five\+By\+Five\+\_\+\+UI\+::\+Five\+By\+Five\+\_\+\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{class_u_i}{UI} with default board size 2 for display formatting. 
+
+Seeds randomness and initializes \doxylink{class_u_i}{UI}. 
+
+\label{doc-func-members}
+\Hypertarget{class_five_by_five___u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_five_by_five___u_i_a9cdcaffb5819e9e63a616e0e5f0327f7}\index{FiveByFive\_UI@{FiveByFive\_UI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!FiveByFive\_UI@{FiveByFive\_UI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{class_five_by_five___u_i_a9cdcaffb5819e9e63a616e0e5f0327f7} 
+\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Five\+By\+Five\+\_\+\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Creates a player (human or computer). 
+
+Creates a human or computer player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the player. \\
+\hline
+{\em symbol} & \doxylink{class_player}{Player}\textquotesingle{}s symbol (X or O). \\
+\hline
+{\em type} & HUMAN or COMPUTER. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_five_by_five___u_i_a0d43d388459d99f51a19e8ec539d9839}\index{FiveByFive\_UI@{FiveByFive\_UI}!display\_board\_matrix@{display\_board\_matrix}}
+\index{display\_board\_matrix@{display\_board\_matrix}!FiveByFive\_UI@{FiveByFive\_UI}}
+\doxysubsubsection{\texorpdfstring{display\_board\_matrix()}{display\_board\_matrix()}}
+{\footnotesize\ttfamily \label{class_five_by_five___u_i_a0d43d388459d99f51a19e8ec539d9839} 
+void Five\+By\+Five\+\_\+\+UI\+::display\+\_\+board\+\_\+matrix (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&}]{matrix}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Displays the current board state. 
+
+Displays the board using parent \doxylink{class_u_i}{UI} function. \Hypertarget{class_five_by_five___u_i_a45b8535b223da4686e18fa5b42d33c9b}\index{FiveByFive\_UI@{FiveByFive\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!FiveByFive\_UI@{FiveByFive\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_five_by_five___u_i_a45b8535b223da4686e18fa5b42d33c9b} 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Five\+By\+Five\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Requests a move from the given player. 
+
+Returns a move from player (human or AI).
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the current player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a \doxylink{class_move}{Move$<$char$>$} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Five\+By\+Five\+\_\+\+UI.\+h\item 
+Five\+By\+Five\+\_\+\+UI.\+cpp\end{DoxyCompactItemize}

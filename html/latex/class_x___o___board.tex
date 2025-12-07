@@ -1,0 +1,173 @@
+\doxysection{X\+\_\+\+O\+\_\+\+Board Class Reference}
+\hypertarget{class_x___o___board}{}\label{class_x___o___board}\index{X\_O\_Board@{X\_O\_Board}}
+
+
+Standard 3×3 Tic-\/\+Tac-\/\+Toe board.  
+
+
+
+
+{\ttfamily \#include $<$XO\+\_\+\+Classes.\+h$>$}
+
+Inheritance diagram for X\+\_\+\+O\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_x___o___board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_x___o___board_aff75cefd426f1e8db38555ed9b59fee8}{X\+\_\+\+O\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a 3×3 board filled with \textquotesingle{}-\/\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_x___o___board_a058fd350ac6d95fd2218fa9fb952be8e}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Places a symbol on the board if the move is valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_x___o___board_a6870b58dc7d079d17568c4ccacdf4273}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em True if the player has a 3-\/in-\/a-\/row. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_x___o___board_adc8279466f2e726ee1d3e99ae84eecbd}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Lose when opponent wins. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_x___o___board_a395eabc703883f8eb5f790c9199529b0}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Draw\+: full board and no winner. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_x___o___board_a384f877778929f5dd86f6901702b907e}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Game ends when win or draw. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Standard 3×3 Tic-\/\+Tac-\/\+Toe board. 
+
+Rules\+:
+\begin{DoxyItemize}
+\item \doxylink{class_board}{Board} size\+: 3×3
+\item Symbols\+: X or O
+\item A player wins by forming 3-\/in-\/a-\/row in any direction.
+\item Draw\+: board is full and no win. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_x___o___board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_x___o___board_aff75cefd426f1e8db38555ed9b59fee8}\index{X\_O\_Board@{X\_O\_Board}!X\_O\_Board@{X\_O\_Board}}
+\index{X\_O\_Board@{X\_O\_Board}!X\_O\_Board@{X\_O\_Board}}
+\doxysubsubsection{\texorpdfstring{X\_O\_Board()}{X\_O\_Board()}}
+{\footnotesize\ttfamily \label{class_x___o___board_aff75cefd426f1e8db38555ed9b59fee8} 
+X\+\_\+\+O\+\_\+\+Board\+::\+X\+\_\+\+O\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a 3×3 board filled with \textquotesingle{}-\/\textquotesingle{}. 
+
+Constructs empty 3×3 Tic-\/\+Tac-\/\+Toe board. 
+
+\label{doc-func-members}
+\Hypertarget{class_x___o___board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_x___o___board_a384f877778929f5dd86f6901702b907e}\index{X\_O\_Board@{X\_O\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!X\_O\_Board@{X\_O\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_x___o___board_a384f877778929f5dd86f6901702b907e} 
+bool X\+\_\+\+O\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Game ends when win or draw. 
+
+Win or draw ends game. 
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_x___o___board_a395eabc703883f8eb5f790c9199529b0}\index{X\_O\_Board@{X\_O\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!X\_O\_Board@{X\_O\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_x___o___board_a395eabc703883f8eb5f790c9199529b0} 
+bool X\+\_\+\+O\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw\+: full board and no winner. 
+
+Draw if full and no winner. 
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_x___o___board_adc8279466f2e726ee1d3e99ae84eecbd}\index{X\_O\_Board@{X\_O\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!X\_O\_Board@{X\_O\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_x___o___board_adc8279466f2e726ee1d3e99ae84eecbd} 
+bool X\+\_\+\+O\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Lose when opponent wins. 
+
+Lose if opponent has 3-\/in-\/a-\/row. 
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_x___o___board_a6870b58dc7d079d17568c4ccacdf4273}\index{X\_O\_Board@{X\_O\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!X\_O\_Board@{X\_O\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_x___o___board_a6870b58dc7d079d17568c4ccacdf4273} 
+bool X\+\_\+\+O\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+True if the player has a 3-\/in-\/a-\/row. 
+
+\doxylink{class_player}{Player} wins if they have 3-\/in-\/a-\/row. 
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_x___o___board_a058fd350ac6d95fd2218fa9fb952be8e}\index{X\_O\_Board@{X\_O\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!X\_O\_Board@{X\_O\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_x___o___board_a058fd350ac6d95fd2218fa9fb952be8e} 
+bool X\+\_\+\+O\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places a symbol on the board if the move is valid. 
+
+Places symbol at (r,c) if valid.
+
+\begin{DoxyReturn}{Returns}
+true if move succeeded. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+XO\+\_\+\+Classes.\+h\item 
+XO\+\_\+\+Classes.\+cpp\end{DoxyCompactItemize}

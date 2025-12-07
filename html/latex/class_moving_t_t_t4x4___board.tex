@@ -1,0 +1,228 @@
+\doxysection{Moving\+TTT4x4\+\_\+\+Board Class Reference}
+\hypertarget{class_moving_t_t_t4x4___board}{}\label{class_moving_t_t_t4x4___board}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+
+
+Implements a 4x4 Moving Tic-\/\+Tac-\/\+Toe board.  
+
+
+
+
+{\ttfamily \#include $<$4x4\+\_\+\+Moving\+TTT.\+h$>$}
+
+Inheritance diagram for Moving\+TTT4x4\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_moving_t_t_t4x4___board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_moving_t_t_t4x4___board_abc632e577406e1a0ba7e34ab81a2e26e}{Moving\+TTT4x4\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a 4x4 Moving Tic-\/\+Tac-\/\+Toe board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_moving_t_t_t4x4___board_a1153cda054e7e1c2aa9b1768276d7224}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Applies a move (placing or moving a symbol). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_moving_t_t_t4x4___board_ace08c97f8344db47fb85413faddc8d3b}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Checks if a player has won. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_moving_t_t_t4x4___board_ab001137e0993baf73256670880dc5d4c}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Checks if a player has lost (always false for this variant). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_moving_t_t_t4x4___board_a105c8583fbd45b464a35634166145abf}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Checks if the game ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_moving_t_t_t4x4___board_a4a87dcd1eb7eeeb2fd4022b08fc0e086}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}p) override
+\begin{DoxyCompactList}\small\item\em Determines if the game is over. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a 4x4 Moving Tic-\/\+Tac-\/\+Toe board. 
+
+In this variant, pieces can be moved after the board becomes full. The board inherits from \doxylink{class_board}{Board$<$char$>$} and overrides all required logic. 
+
+\label{doc-constructors}
+\Hypertarget{class_moving_t_t_t4x4___board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_moving_t_t_t4x4___board_abc632e577406e1a0ba7e34ab81a2e26e}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\doxysubsubsection{\texorpdfstring{MovingTTT4x4\_Board()}{MovingTTT4x4\_Board()}}
+{\footnotesize\ttfamily \label{class_moving_t_t_t4x4___board_abc632e577406e1a0ba7e34ab81a2e26e} 
+Moving\+TTT4x4\+\_\+\+Board\+::\+Moving\+TTT4x4\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a 4x4 Moving Tic-\/\+Tac-\/\+Toe board. 
+
+Initializes the 4x4 Moving Tic-\/\+Tac-\/\+Toe board.
+
+Layout\+:
+\begin{DoxyItemize}
+\item Top row filled with \textquotesingle{}X\textquotesingle{}
+\item Bottom row filled with \textquotesingle{}O\textquotesingle{}
+\item Middle rows empty
+\end{DoxyItemize}
+
+Movement-\/based variant\+: Players move their pieces around instead of placing new ones. 
+
+\label{doc-func-members}
+\Hypertarget{class_moving_t_t_t4x4___board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_moving_t_t_t4x4___board_a4a87dcd1eb7eeeb2fd4022b08fc0e086}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_moving_t_t_t4x4___board_a4a87dcd1eb7eeeb2fd4022b08fc0e086} 
+bool Moving\+TTT4x4\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the game is over. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if win or draw conditions are met. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_moving_t_t_t4x4___board_a105c8583fbd45b464a35634166145abf}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_moving_t_t_t4x4___board_a105c8583fbd45b464a35634166145abf} 
+bool Moving\+TTT4x4\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the game ended in a draw. 
+
+No draw in this movement-\/based game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if draw condition is met. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_moving_t_t_t4x4___board_ab001137e0993baf73256670880dc5d4c}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_moving_t_t_t4x4___board_ab001137e0993baf73256670880dc5d4c} 
+bool Moving\+TTT4x4\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if a player has lost (always false for this variant). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the player. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always false, as losing is not explicitly defined. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_moving_t_t_t4x4___board_ace08c97f8344db47fb85413faddc8d3b}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_moving_t_t_t4x4___board_ace08c97f8344db47fb85413faddc8d3b} 
+bool Moving\+TTT4x4\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if a player has won. 
+
+Checks if the player has achieved 3-\/in-\/a-\/row.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to player whose win status is being checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the player has won. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_moving_t_t_t4x4___board_a1153cda054e7e1c2aa9b1768276d7224}\index{MovingTTT4x4\_Board@{MovingTTT4x4\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!MovingTTT4x4\_Board@{MovingTTT4x4\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_moving_t_t_t4x4___board_a1153cda054e7e1c2aa9b1768276d7224} 
+bool Moving\+TTT4x4\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies a move (placing or moving a symbol). 
+
+Executes a movement-\/style update.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to the \doxylink{class_move}{Move$<$char$>$} containing row, col, and symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move is legal and was applied, false otherwise.
+\end{DoxyReturn}
+\doxylink{class_move}{Move} encoding\+:
+\begin{DoxyItemize}
+\item move-\/\texorpdfstring{$>$}{>}x = from\+\_\+row \texorpdfstring{$\ast$}{*} 10 + to\+\_\+row
+\item move-\/\texorpdfstring{$>$}{>}y = from\+\_\+col \texorpdfstring{$\ast$}{*} 10 + to\+\_\+col
+\end{DoxyItemize}
+
+Rules\+:
+\begin{DoxyItemize}
+\item You must move your own symbol
+\item You can move 1 square horizontally or vertically
+\item The destination must be empty 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+4x4\+\_\+\+Moving\+TTT.\+h\item 
+4x4\+\_\+\+Moving\+TTT.\+cpp\end{DoxyCompactItemize}

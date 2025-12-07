@@ -1,0 +1,112 @@
+\doxysection{UI\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_u_i}{}\label{class_u_i}\index{UI$<$ T $>$@{UI$<$ T $>$}}
+
+
+Base class for handling user interface and input/output.  
+
+
+
+
+{\ttfamily \#include $<$Board\+Game\+\_\+\+Classes.\+h$>$}
+
+Inheritance diagram for UI\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}\label{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a} 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_ae50eed41905ca2f8dc103d9bef427fe6}\label{class_u_i_ae50eed41905ca2f8dc103d9bef427fe6} 
+{\bfseries UI} (string message, int cell\+\_\+display\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_aaad19c26b8e4c49ba7ada54abd83e23c}\label{class_u_i_aaad19c26b8e4c49ba7ada54abd83e23c} 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_move}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Ask the user (or AI) to make a move. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, T symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_aa3775124efaeac59935ae0afb354708d}\label{class_u_i_aa3775124efaeac59935ae0afb354708d} 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ T $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_a7b1603de1f73fbb4006e4f00a27c44da}\label{class_u_i_a7b1603de1f73fbb4006e4f00a27c44da} 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_ac3d45fea2bbcaa0372d8e5101e116ca1}\label{class_u_i_ac3d45fea2bbcaa0372d8e5101e116ca1} 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_a6c79c489ae9aa3a7860fb58e5a14ddfe}\label{class_u_i_a6c79c489ae9aa3a7860fb58e5a14ddfe} 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class UI$<$ T $>$}
+Base class for handling user interface and input/output. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of symbol used on the board. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}\index{UI$<$ T $>$@{UI$<$ T $>$}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!UI$<$ T $>$@{UI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i}{UI}}$<$ T $>$\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{string \&}]{name}{, }\item[{T}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a player object based on input name, symbol, and type. 
+
+Default implementation of creating two players. \Hypertarget{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}\index{UI$<$ T $>$@{UI$<$ T $>$}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!UI$<$ T $>$@{UI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_u_i_a8befa259c38c57e6ae2e8ed81c476337} 
+template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_move}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i}{UI}}$<$ T $>$\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ask the user (or AI) to make a move. 
+
+
+
+Implemented in \mbox{\hyperlink{class_connect4___u_i_a9d2331347a852dbc8b72d4c87ef023e5}{Connect4\+\_\+\+UI}}, \mbox{\hyperlink{class_diamond_u_i_ab3de414872c2ab932049562533a55c8f}{Diamond\+UI}}, \mbox{\hyperlink{class_five_by_five___u_i_a45b8535b223da4686e18fa5b42d33c9b}{Five\+By\+Five\+\_\+\+UI}}, \mbox{\hyperlink{class_infinity_u_i_a6221c610c10e9e4237eae4eff2168dea}{Infinity\+UI$<$ T $>$}}, \mbox{\hyperlink{class_memory___u_i_a3e27165bf43524664d5bcd76e52910cb}{Memory\+\_\+\+UI}}, \mbox{\hyperlink{class_misere_u_i_abef6a347634f9f69b84f33b629f77f95}{Misere\+UI}}, \mbox{\hyperlink{class_moving_t_t_t4x4___u_i_a57250e20e4b8cecd68e6b10ae48aaed2}{Moving\+TTT4x4\+\_\+\+UI}}, \mbox{\hyperlink{class_numerical___tic_tac_toe___u_i_af0b7b7b35c835f40226838f3d0b6f1b3}{Numerical\+\_\+\+Tic\+Tac\+Toe\+\_\+\+UI}}, \mbox{\hyperlink{class_obstacles___u_i_aaf8a700063b544107b0ec92929b7242d}{Obstacles\+\_\+\+UI}}, \mbox{\hyperlink{class_pyramid___u_i_a6bd1983ff0cba1c68b83940b785a7efd}{Pyramid\+\_\+\+UI}}, \mbox{\hyperlink{class_s_u_s___u_i_afb8615386bdb3cd30d02d1ee68139c98}{SUS\+\_\+\+UI}}, \mbox{\hyperlink{class_ultimate_t_t_t___u_i_a6b1c02d6bf2406763925d8492531599a}{Ultimate\+TTT\+\_\+\+UI}}, \mbox{\hyperlink{class_word___u_i_af531d7f4e2ed7ac86f37fe17c2f83365}{Word\+\_\+\+UI}}, and \mbox{\hyperlink{class_x_o___u_i_a16f0f9fc6136125e2515c1bc0734924f}{XO\+\_\+\+UI}}.
+
+\Hypertarget{class_u_i_a6966a040c995b2292e5edddaa94f889a}\index{UI$<$ T $>$@{UI$<$ T $>$}!setup\_players@{setup\_players}}
+\index{setup\_players@{setup\_players}!UI$<$ T $>$@{UI$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setup\_players()}{setup\_players()}}
+{\footnotesize\ttfamily \label{class_u_i_a6966a040c995b2292e5edddaa94f889a} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i}{UI}}$<$ T $>$\+::setup\+\_\+players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up players for the game. 
+
+Default implementation of setting up two players. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Board\+Game\+\_\+\+Classes.\+h\end{DoxyCompactItemize}

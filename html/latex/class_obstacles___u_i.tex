@@ -1,0 +1,93 @@
+\doxysection{Obstacles\+\_\+\+UI Class Reference}
+\hypertarget{class_obstacles___u_i}{}\label{class_obstacles___u_i}\index{Obstacles\_UI@{Obstacles\_UI}}
+
+
+\doxylink{class_u_i}{UI} handler for the 5×5 Obstacles Tic-\/\+Tac-\/\+Toe game.  
+
+
+
+
+{\ttfamily \#include $<$Obstacles\+\_\+\+UI.\+h$>$}
+
+Inheritance diagram for Obstacles\+\_\+\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_obstacles___u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_obstacles___u_i_aaf8a700063b544107b0ec92929b7242d}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Requests user or AI move. \end{DoxyCompactList}\item 
+\Hypertarget{class_obstacles___u_i_a6f47785092d937329744d0ffe260af4b}\label{class_obstacles___u_i_a6f47785092d937329744d0ffe260af4b} 
+\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+player} (std\+::string \&name, char symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Creates human or computer player. \end{DoxyCompactList}\item 
+\Hypertarget{class_obstacles___u_i_a24d29d3155680ee1ccd2f8804d736cdb}\label{class_obstacles___u_i_a24d29d3155680ee1ccd2f8804d736cdb} 
+void {\bfseries display\+\_\+board\+\_\+matrix} (const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&matrix) const override
+\begin{DoxyCompactList}\small\item\em Shows the 5×5 grid. \end{DoxyCompactList}\item 
+\Hypertarget{class_obstacles___u_i_abc947bf668062ac0e7652cd480120c9e}\label{class_obstacles___u_i_abc947bf668062ac0e7652cd480120c9e} 
+void {\bfseries prepare\+\_\+obstacles} (\mbox{\hyperlink{class_board}{Board}}$<$ char $>$ \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Called once at game start\+: inserts obstacles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_u_i}{UI} handler for the 5×5 Obstacles Tic-\/\+Tac-\/\+Toe game. 
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Display the board
+\item Ask for human moves
+\item Provide simple AI\+: • Try to win • Try to block • Otherwise random empty move
+\item Insert obstacles before game starts 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_obstacles___u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_obstacles___u_i_aaf8a700063b544107b0ec92929b7242d}\index{Obstacles\_UI@{Obstacles\_UI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!Obstacles\_UI@{Obstacles\_UI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_obstacles___u_i_aaf8a700063b544107b0ec92929b7242d} 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Obstacles\+\_\+\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Requests user or AI move. 
+
+
+
+Implements \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Obstacles\+\_\+\+UI.\+h\item 
+Obstacles\+\_\+\+UI.\+cpp\end{DoxyCompactItemize}

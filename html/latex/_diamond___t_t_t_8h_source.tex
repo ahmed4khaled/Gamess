@@ -1,0 +1,72 @@
+\doxysection{Diamond\+\_\+\+TTT.\+h}
+\hypertarget{_diamond___t_t_t_8h_source}{}\label{_diamond___t_t_t_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAMOND\_TTT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAMOND\_TTT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diamond_board_a717e4ed89b24131c9eec836c50f8372d}{DiamondBoard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_board_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_diamond_board_a717e4ed89b24131c9eec836c50f8372d}{DiamondBoard}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_a3fbf3fbfc15a90feacfb46fca9239c3b}{is\_valid\_cell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_ac99663918be4334b0d08e4a5838ba610}{update\_board}}(\mbox{\hyperlink{class_move}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_diamond_board_a503d6aa10df65a958ad7f6936ad5b9da}{get\_directions}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player,\ \textcolor{keywordtype}{int}\ length)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_a404c3a93e61cdb1780d8188c8513743c}{is\_win}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_a8702608200e198ae97c898109635cacf}{is\_draw}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_ac1d4938e2fe7e82506533ca674b888b7}{is\_lose}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_a479d121a2204e2a909f5f9eca7375ac3}{game\_is\_over}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ vector<pair<int,\ int>>\ \mbox{\hyperlink{class_diamond_board_a1b45b9c4bcd077896f9002d77fcace98}{get\_available\_moves}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diamond_board_a166a543a4707fd3c452dc505e1a811b6}{check\_win\_state}}(\textcolor{keywordtype}{char}\ symbol)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diamond_board_ac2d77f8f06d5da87f57a8b9576f1ea6e}{make\_move}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keywordtype}{char}\ symbol);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diamond_board_acfafa9175f8cbb6e1601574f93de346f}{undo\_move}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ vector<int>\ \mbox{\hyperlink{class_diamond_board_a4a1fd3d4a71b2335b42f6b33b13db43e}{get\_directions\_for\_symbol}}(\textcolor{keywordtype}{char}\ symbol,\ \textcolor{keywordtype}{int}\ length)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diamond_a_i_player_a1b0991e0f4f0337594de073813b2f6be}{DiamondAIPlayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_player_adb4e803a7ac0356b111b8ca79d766976}{Player}}<char>\ \{}
+\DoxyCodeLine{00107\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MAX\_DEPTH\ =\ 6;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{struct\ }MoveScore\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ col;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ score;}
+\DoxyCodeLine{00117\ \ \ \ \ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ minimax(\mbox{\hyperlink{class_diamond_board}{DiamondBoard}}*\ board,\ \textcolor{keywordtype}{int}\ depth,\ \textcolor{keywordtype}{bool}\ isMaximizing,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aiSymbol,\ \textcolor{keywordtype}{char}\ humanSymbol,\ \textcolor{keywordtype}{int}\ alpha,\ \textcolor{keywordtype}{int}\ beta);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ evaluate\_board(\mbox{\hyperlink{class_diamond_board}{DiamondBoard}}*\ board,\ \textcolor{keywordtype}{char}\ aiSymbol,\ \textcolor{keywordtype}{char}\ humanSymbol);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_diamond_a_i_player_a1b0991e0f4f0337594de073813b2f6be}{DiamondAIPlayer}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_player_af0ad0d4ca8584d23a98c723cd703a4f6}{name}},\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_player_a272d6c4dab769930d4f8074918e7708a}{symbol}});}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_diamond_a_i_player_a13ae8dde8422bf0bd099e0faf698dc9b}{get\_best\_move}}();}
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diamond_u_i_a76048d636184fab67c5dbc970f425b9f}{DiamondUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}{UI}}<char>\ \{}
+\DoxyCodeLine{00148\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{class_diamond_u_i_a76048d636184fab67c5dbc970f425b9f}{DiamondUI}}();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{class_player}{Player<char>}}*\ \mbox{\hyperlink{class_diamond_u_i_ae79364a92df6844ae51e94a10250dbee}{create\_player}}(\textcolor{keywordtype}{string}\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_diamond_u_i_ab3de414872c2ab932049562533a55c8f}{get\_move}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00163\ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

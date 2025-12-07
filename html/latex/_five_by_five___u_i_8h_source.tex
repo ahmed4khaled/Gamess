@@ -1,0 +1,25 @@
+\doxysection{Five\+By\+Five\+\_\+\+UI.\+h}
+\hypertarget{_five_by_five___u_i_8h_source}{}\label{_five_by_five___u_i_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_five_by_five___u_i_ae73c3a9969789f012f811ef2a65ebe28}{FiveByFive\_UI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}{UI}}<char>\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_five_by_five___u_i_ae73c3a9969789f012f811ef2a65ebe28}{FiveByFive\_UI}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_five_by_five___u_i_ae73c3a9969789f012f811ef2a65ebe28}{\string~FiveByFive\_UI}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_five_by_five___u_i_a45b8535b223da4686e18fa5b42d33c9b}{get\_move}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_player}{Player<char>}}*\ \mbox{\hyperlink{class_five_by_five___u_i_a9cdcaffb5819e9e63a616e0e5f0327f7}{create\_player}}(std::string\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_five_by_five___u_i_a0d43d388459d99f51a19e8ec539d9839}{display\_board\_matrix}}(\textcolor{keyword}{const}\ std::vector<std::vector<char>>\&\ matrix)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ count\_three\_for\_matrix(\textcolor{keyword}{const}\ std::vector<std::vector<char>>\&\ mat,\ \textcolor{keywordtype}{char}\ symbol)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

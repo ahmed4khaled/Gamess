@@ -1,0 +1,26 @@
+\doxysection{Obstacles\+\_\+\+UI.\+h}
+\hypertarget{_obstacles___u_i_8h_source}{}\label{_obstacles___u_i_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }Obstacles\_UI\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}{UI}}<char>\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ Obstacles\_UI();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Obstacles\_UI()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<char>}}*\ \mbox{\hyperlink{class_obstacles___u_i_aaf8a700063b544107b0ec92929b7242d}{get\_move}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_player}{Player<char>}}*\ \mbox{\hyperlink{class_obstacles___u_i_a6f47785092d937329744d0ffe260af4b}{create\_player}}(std::string\&\ name,\ \textcolor{keywordtype}{char}\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_obstacles___u_i_a24d29d3155680ee1ccd2f8804d736cdb}{display\_board\_matrix}}(\textcolor{keyword}{const}\ std::vector<std::vector<char>>\&\ matrix)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_obstacles___u_i_abc947bf668062ac0e7652cd480120c9e}{prepare\_obstacles}}(\mbox{\hyperlink{class_board}{Board<char>}}*\ board);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ read\_int\_in\_range(\textcolor{keywordtype}{int}\ minv,\ \textcolor{keywordtype}{int}\ maxv)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

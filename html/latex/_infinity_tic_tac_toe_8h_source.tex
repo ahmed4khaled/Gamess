@@ -1,0 +1,53 @@
+\doxysection{Infinity\+Tic\+Tac\+Toe.\+h}
+\hypertarget{_infinity_tic_tac_toe_8h_source}{}\label{_infinity_tic_tac_toe_8h_source}\mbox{\hyperlink{_infinity_tic_tac_toe_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_INFINITY\_TICTACTOE\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_INFINITY\_TICTACTOE\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_infinity_board_a1ebd206ea49e1b42bb5414b6829ce036}{InfinityBoard}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_board_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<T>\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ std::queue<std::pair<int,\ int>>\ history\_X;\ \ }
+\DoxyCodeLine{00029\ \ \ \ \ std::queue<std::pair<int,\ int>>\ history\_O;\ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ moves\_before\_removal\ =\ 3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_infinity_board_a1ebd206ea49e1b42bb5414b6829ce036}{InfinityBoard}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_infinity_board_a8fce921fbda84b119703ac36d03c57a6}{update\_board}}(\mbox{\hyperlink{class_move}{Move<T>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_infinity_board_ab6a01dff2737ebe5621ab9eef0bc77ec}{is\_win}}(\mbox{\hyperlink{class_player}{Player<T>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_infinity_board_a90d02f2ab0c59d21d0ffda4c41947c8b}{is\_lose}}(\mbox{\hyperlink{class_player}{Player<T>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_infinity_board_a2353b573426adb100e69aeb879381336}{is\_draw}}(\mbox{\hyperlink{class_player}{Player<T>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_infinity_board_ac28c07fdfa91ba64b993e009d987428c}{game\_is\_over}}(\mbox{\hyperlink{class_player}{Player<T>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_infinity_player_a14028ccbe6ec47d6c182a03f9192353a}{InfinityPlayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_player_adb4e803a7ac0356b111b8ca79d766976}{Player}}<T>\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_infinity_player_a14028ccbe6ec47d6c182a03f9192353a}{InfinityPlayer}}(std::string\ \mbox{\hyperlink{class_player_af0ad0d4ca8584d23a98c723cd703a4f6}{name}},\ T\ \mbox{\hyperlink{class_player_a272d6c4dab769930d4f8074918e7708a}{symbol}},\ PlayerType\ \mbox{\hyperlink{class_player_a81a15b1b507fd5f2157fb15bf0fd283f}{type}});}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00093\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_infinity_u_i_a8ae2989a8e092f5b87d3cdfb912cb082}{InfinityUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_u_i_afb59b53f3c2ed750b1a9a0c7d6dc4a7a}{UI}}<T>\ \{}
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_infinity_u_i_a8ae2989a8e092f5b87d3cdfb912cb082}{InfinityUI}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_move}{Move<T>}}*\ \mbox{\hyperlink{class_infinity_u_i_a6221c610c10e9e4237eae4eff2168dea}{get\_move}}(\mbox{\hyperlink{class_player}{Player<T>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_player}{Player<T>}}*\ \mbox{\hyperlink{class_infinity_u_i_aa1221a20b3eda43073b8b4e4e96accc8}{create\_player}}(std::string\&\ name,\ T\ symbol,\ PlayerType\ type)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

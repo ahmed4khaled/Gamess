@@ -1,0 +1,157 @@
+\doxysection{Memory\+Board Class Reference}
+\hypertarget{class_memory_board}{}\label{class_memory_board}\index{MemoryBoard@{MemoryBoard}}
+
+
+\doxylink{class_board}{Board} for Memory Tic-\/\+Tac-\/\+Toe\+: stores real symbols internally.  
+
+
+
+
+{\ttfamily \#include $<$Memory\+\_\+\+TTT.\+h$>$}
+
+Inheritance diagram for Memory\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_memory_board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_memory_board_afd92bd1647f87fb0b1024b2fa7f81d7b}\label{class_memory_board_afd92bd1647f87fb0b1024b2fa7f81d7b} 
+{\bfseries Memory\+Board} ()
+\begin{DoxyCompactList}\small\item\em Constructor (initializes 3x3 internal board). \end{DoxyCompactList}\item 
+\Hypertarget{class_memory_board_a720e988916a9de37ef41db887cc4553f}\label{class_memory_board_a720e988916a9de37ef41db887cc4553f} 
+std\+::vector$<$ std\+::vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return internal board matrix (real symbols). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_memory_board_ac21bc130be847408b41beb7a28d54e31}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}mv) override
+\begin{DoxyCompactList}\small\item\em Apply move to the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_memory_board_a97ca50087ca4b0c89e08e570ded2abb1}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check win for the given player. Signature matches framework\+: takes \doxylink{class_player}{Player$<$char$>$}\texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_memory_board_a3b87404b6508a6c63d40f38bbb90390a}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if a player has lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_memory_board_a9f31d94801313d1c82cbbd1e10a27526}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if the game ended in a draw. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_memory_board_af0b2d79b24e1c7719cf56ef62b52274f}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if the game is over. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_board}{Board} for Memory Tic-\/\+Tac-\/\+Toe\+: stores real symbols internally. 
+
+\label{doc-func-members}
+\Hypertarget{class_memory_board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_memory_board_af0b2d79b24e1c7719cf56ef62b52274f}\index{MemoryBoard@{MemoryBoard}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!MemoryBoard@{MemoryBoard}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_memory_board_af0b2d79b24e1c7719cf56ef62b52274f} 
+bool Memory\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the game is over. 
+
+
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_memory_board_a9f31d94801313d1c82cbbd1e10a27526}\index{MemoryBoard@{MemoryBoard}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!MemoryBoard@{MemoryBoard}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_memory_board_a9f31d94801313d1c82cbbd1e10a27526} 
+bool Memory\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the game ended in a draw. 
+
+
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_memory_board_a3b87404b6508a6c63d40f38bbb90390a}\index{MemoryBoard@{MemoryBoard}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!MemoryBoard@{MemoryBoard}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_memory_board_a3b87404b6508a6c63d40f38bbb90390a} 
+bool Memory\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if a player has lost. 
+
+
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_memory_board_a97ca50087ca4b0c89e08e570ded2abb1}\index{MemoryBoard@{MemoryBoard}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!MemoryBoard@{MemoryBoard}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_memory_board_a97ca50087ca4b0c89e08e570ded2abb1} 
+bool Memory\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check win for the given player. Signature matches framework\+: takes \doxylink{class_player}{Player$<$char$>$}\texorpdfstring{$\ast$}{*}. 
+
+
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_memory_board_ac21bc130be847408b41beb7a28d54e31}\index{MemoryBoard@{MemoryBoard}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!MemoryBoard@{MemoryBoard}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_memory_board_ac21bc130be847408b41beb7a28d54e31} 
+bool Memory\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{mv}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply move to the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mv} & pointer to \doxylink{class_move}{Move$<$char$>$} (uses mv-\/\texorpdfstring{$>$}{>}get\+\_\+x()/get\+\_\+y()/get\+\_\+symbol()). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if move applied, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_memory___t_t_t_8h}{Memory\+\_\+\+TTT.\+h}}\item 
+\mbox{\hyperlink{_memory___t_t_t_8cpp}{Memory\+\_\+\+TTT.\+cpp}}\end{DoxyCompactItemize}

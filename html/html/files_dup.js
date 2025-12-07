@@ -1,0 +1,25 @@
+var files_dup =
+[
+    [ "4x4_MovingTTT.h", "4x4___moving_t_t_t_8h_source.html", null ],
+    [ "BoardGame_Classes.h", "_board_game___classes_8h_source.html", null ],
+    [ "Connect4.cpp", "_connect4_8cpp.html", null ],
+    [ "Connect4.h", "_connect4_8h_source.html", null ],
+    [ "Diamond_TTT.h", "_diamond___t_t_t_8h_source.html", null ],
+    [ "FiveByFive_Board.h", "_five_by_five___board_8h_source.html", null ],
+    [ "FiveByFive_UI.h", "_five_by_five___u_i_8h_source.html", null ],
+    [ "InfinityTicTacToe.cpp", "_infinity_tic_tac_toe_8cpp.html", null ],
+    [ "InfinityTicTacToe.h", "_infinity_tic_tac_toe_8h.html", "_infinity_tic_tac_toe_8h" ],
+    [ "Memory_TTT.cpp", "_memory___t_t_t_8cpp.html", null ],
+    [ "Memory_TTT.h", "_memory___t_t_t_8h.html", "_memory___t_t_t_8h" ],
+    [ "Misere_TICTAKTOE.h", "_misere___t_i_c_t_a_k_t_o_e_8h_source.html", null ],
+    [ "Numerical_TicTacToe.h", "_numerical___tic_tac_toe_8h_source.html", null ],
+    [ "Numerical_TTT.cpp", "_numerical___t_t_t_8cpp.html", null ],
+    [ "Obstacles_Board.h", "_obstacles___board_8h_source.html", null ],
+    [ "Obstacles_UI.h", "_obstacles___u_i_8h_source.html", null ],
+    [ "Pyramid_TTT.h", "_pyramid___t_t_t_8h.html", "_pyramid___t_t_t_8h" ],
+    [ "SUS_TicTacToe.h", "_s_u_s___tic_tac_toe_8h_source.html", null ],
+    [ "UltimateTTT.h", "_ultimate_t_t_t_8h_source.html", null ],
+    [ "Word_Board.h", "_word___board_8h_source.html", null ],
+    [ "Word_UI.h", "_word___u_i_8h_source.html", null ],
+    [ "XO_Classes.h", "_x_o___classes_8h_source.html", null ]
+];

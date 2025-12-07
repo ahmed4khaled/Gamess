@@ -1,0 +1,26 @@
+\doxysection{Infinity\+Tic\+Tac\+Toe.\+h File Reference}
+\hypertarget{_infinity_tic_tac_toe_8h}{}\label{_infinity_tic_tac_toe_8h}\index{InfinityTicTacToe.h@{InfinityTicTacToe.h}}
+
+
+Infinity Tic-\/\+Tac-\/\+Toe game declarations (3x3 board, oldest move removed after every 3 moves).  
+
+
+{\ttfamily \#include "{}Board\+Game\+\_\+\+Classes.\+h"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_infinity_board}{Infinity\+Board$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Infinity game board \+: 3x3 with rolling(oldest removed) behavior. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_infinity_player}{Infinity\+Player$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} class for Infinity Tic-\/\+Tac-\/\+Toe. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_infinity_u_i}{Infinity\+UI$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_u_i}{UI} (console) for Infinity Tic-\/\+Tac-\/\+Toe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Infinity Tic-\/\+Tac-\/\+Toe game declarations (3x3 board, oldest move removed after every 3 moves). 
+
+A game on a 3x3 grid where the oldest moves are periodically removed from the board. After every three moves, the oldest mark on the board disappears. The first player to align three marks in a row before any of those marks vanish wins the game. 

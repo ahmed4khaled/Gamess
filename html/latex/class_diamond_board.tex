@@ -1,0 +1,323 @@
+\doxysection{Diamond\+Board Class Reference}
+\hypertarget{class_diamond_board}{}\label{class_diamond_board}\index{DiamondBoard@{DiamondBoard}}
+
+
+Implements the board for Diamond Tic-\/\+Tac-\/\+Toe (5x5 diamond shape).  
+
+
+
+
+{\ttfamily \#include $<$Diamond\+\_\+\+TTT.\+h$>$}
+
+Inheritance diagram for Diamond\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_diamond_board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diamond_board_a717e4ed89b24131c9eec836c50f8372d}{Diamond\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the 5x5 diamond board. Non-\/playable cells are marked with \textquotesingle{}\#\textquotesingle{}, playable with \textquotesingle{}.\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_a3fbf3fbfc15a90feacfb46fca9239c3b}{is\+\_\+valid\+\_\+cell}} (int r, int c) const
+\begin{DoxyCompactList}\small\item\em Checks if a board cell belongs to the diamond shape. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_ac99663918be4334b0d08e4a5838ba610}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Attempts to apply a move to board. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_diamond_board_a503d6aa10df65a958ad7f6936ad5b9da}{get\+\_\+directions}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player, int length) const
+\begin{DoxyCompactList}\small\item\em Returns list of directions in which the player has {\ttfamily length} consecutive symbols. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_a404c3a93e61cdb1780d8188c8513743c}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if a player has won. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_a8702608200e198ae97c898109635cacf}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks draw condition (board filled with 13 playable moves). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_ac1d4938e2fe7e82506533ca674b888b7}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Losing not defined for this game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_a479d121a2204e2a909f5f9eca7375ac3}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Determines if the game has ended. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ int, int $>$ $>$ \mbox{\hyperlink{class_diamond_board_a1b45b9c4bcd077896f9002d77fcace98}{get\+\_\+available\+\_\+moves}} () const
+\begin{DoxyCompactList}\small\item\em Returns all empty playable cells. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_diamond_board_a166a543a4707fd3c452dc505e1a811b6}{check\+\_\+win\+\_\+state}} (char symbol) const
+\begin{DoxyCompactList}\small\item\em Checks if a given symbol has met the win state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diamond_board_ac2d77f8f06d5da87f57a8b9576f1ea6e}{make\+\_\+move}} (int r, int c, char symbol)
+\begin{DoxyCompactList}\small\item\em Places symbol on board (used by AI minimax). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diamond_board_acfafa9175f8cbb6e1601574f93de346f}{undo\+\_\+move}} (int r, int c)
+\begin{DoxyCompactList}\small\item\em Removes symbol (undo a move). \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_diamond_board_a4a1fd3d4a71b2335b42f6b33b13db43e}{get\+\_\+directions\+\_\+for\+\_\+symbol}} (char symbol, int length) const
+\begin{DoxyCompactList}\small\item\em Finds directions where given symbol has a sequence of length {\ttfamily length}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the board for Diamond Tic-\/\+Tac-\/\+Toe (5x5 diamond shape). 
+
+Only cells that satisfy \texorpdfstring{$\vert$}{|}r -\/ 2\texorpdfstring{$\vert$}{|} + \texorpdfstring{$\vert$}{|}c -\/ 2\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<}= 2 are playable. Win condition\+: player must form {\bfseries{one 3-\/in-\/a-\/row AND one 4-\/in-\/a-\/row}} in different directions. 
+
+\label{doc-constructors}
+\Hypertarget{class_diamond_board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_diamond_board_a717e4ed89b24131c9eec836c50f8372d}\index{DiamondBoard@{DiamondBoard}!DiamondBoard@{DiamondBoard}}
+\index{DiamondBoard@{DiamondBoard}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{DiamondBoard()}{DiamondBoard()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a717e4ed89b24131c9eec836c50f8372d} 
+Diamond\+Board\+::\+Diamond\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the 5x5 diamond board. Non-\/playable cells are marked with \textquotesingle{}\#\textquotesingle{}, playable with \textquotesingle{}.\textquotesingle{}. 
+
+Constructs a diamond 5x5 board. Playable cells are \textquotesingle{}.\textquotesingle{}, blocked cells are \textquotesingle{}\#\textquotesingle{}. 
+
+\label{doc-func-members}
+\Hypertarget{class_diamond_board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_diamond_board_a166a543a4707fd3c452dc505e1a811b6}\index{DiamondBoard@{DiamondBoard}!check\_win\_state@{check\_win\_state}}
+\index{check\_win\_state@{check\_win\_state}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{check\_win\_state()}{check\_win\_state()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a166a543a4707fd3c452dc505e1a811b6} 
+bool Diamond\+Board\+::check\+\_\+win\+\_\+state (\begin{DoxyParamCaption}\item[{char}]{symbol}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a given symbol has met the win state. 
+
+Checks if a symbol has winning pattern.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Symbol to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both a 3-\/sequence and 4-\/sequence exist in different directions. 
+\end{DoxyReturn}
+\Hypertarget{class_diamond_board_a479d121a2204e2a909f5f9eca7375ac3}\index{DiamondBoard@{DiamondBoard}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a479d121a2204e2a909f5f9eca7375ac3} 
+bool Diamond\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the game has ended. 
+
+Game over when win or draw.
+
+\begin{DoxyReturn}{Returns}
+true if win or draw. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_diamond_board_a1b45b9c4bcd077896f9002d77fcace98}\index{DiamondBoard@{DiamondBoard}!get\_available\_moves@{get\_available\_moves}}
+\index{get\_available\_moves@{get\_available\_moves}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{get\_available\_moves()}{get\_available\_moves()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a1b45b9c4bcd077896f9002d77fcace98} 
+vector$<$ pair$<$ int, int $>$ $>$ Diamond\+Board\+::get\+\_\+available\+\_\+moves (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns all empty playable cells. 
+
+Returns all playable empty cells.
+
+\begin{DoxyReturn}{Returns}
+Vector of (row,col) pairs. 
+\end{DoxyReturn}
+\Hypertarget{class_diamond_board_a503d6aa10df65a958ad7f6936ad5b9da}\index{DiamondBoard@{DiamondBoard}!get\_directions@{get\_directions}}
+\index{get\_directions@{get\_directions}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{get\_directions()}{get\_directions()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a503d6aa10df65a958ad7f6936ad5b9da} 
+vector$<$ int $>$ Diamond\+Board\+::get\+\_\+directions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{int}]{length}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns list of directions in which the player has {\ttfamily length} consecutive symbols. 
+
+Returns directions where player has a sequence of length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \doxylink{class_player}{Player} whose symbol to check. \\
+\hline
+{\em length} & Required sequence length (3 or 4). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of integers (1=horizontal,2=vertical,3=diag↘,4=diag↙) 
+\end{DoxyReturn}
+\Hypertarget{class_diamond_board_a4a1fd3d4a71b2335b42f6b33b13db43e}\index{DiamondBoard@{DiamondBoard}!get\_directions\_for\_symbol@{get\_directions\_for\_symbol}}
+\index{get\_directions\_for\_symbol@{get\_directions\_for\_symbol}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{get\_directions\_for\_symbol()}{get\_directions\_for\_symbol()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a4a1fd3d4a71b2335b42f6b33b13db43e} 
+vector$<$ int $>$ Diamond\+Board\+::get\+\_\+directions\+\_\+for\+\_\+symbol (\begin{DoxyParamCaption}\item[{char}]{symbol}{, }\item[{int}]{length}{}\end{DoxyParamCaption}) const}
+
+
+
+Finds directions where given symbol has a sequence of length {\ttfamily length}. 
+
+Returns directions where given symbol has a sequence. \Hypertarget{class_diamond_board_a8702608200e198ae97c898109635cacf}\index{DiamondBoard@{DiamondBoard}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a8702608200e198ae97c898109635cacf} 
+bool Diamond\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks draw condition (board filled with 13 playable moves). 
+
+Draw occurs when all 13 playable cells are used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \doxylink{class_player}{Player} pointer (unused). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if board is full without a win. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_diamond_board_ac1d4938e2fe7e82506533ca674b888b7}\index{DiamondBoard@{DiamondBoard}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_diamond_board_ac1d4938e2fe7e82506533ca674b888b7} 
+bool Diamond\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Losing not defined for this game. 
+
+\begin{DoxyReturn}{Returns}
+Always false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_diamond_board_a3fbf3fbfc15a90feacfb46fca9239c3b}\index{DiamondBoard@{DiamondBoard}!is\_valid\_cell@{is\_valid\_cell}}
+\index{is\_valid\_cell@{is\_valid\_cell}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_cell()}{is\_valid\_cell()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a3fbf3fbfc15a90feacfb46fca9239c3b} 
+bool Diamond\+Board\+::is\+\_\+valid\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{r}{, }\item[{int}]{c}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a board cell belongs to the diamond shape. 
+
+Checks if the given cell lies inside the diamond shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index. \\
+\hline
+{\em c} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cell is playable. 
+\end{DoxyReturn}
+\Hypertarget{class_diamond_board_a404c3a93e61cdb1780d8188c8513743c}\index{DiamondBoard@{DiamondBoard}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_diamond_board_a404c3a93e61cdb1780d8188c8513743c} 
+bool Diamond\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if a player has won. 
+
+Win requires both 3-\/in-\/row AND 4-\/in-\/row in different directions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The player whose win condition is checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if player has both a 3-\/in-\/a-\/row and 4-\/in-\/a-\/row in different directions. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_diamond_board_ac2d77f8f06d5da87f57a8b9576f1ea6e}\index{DiamondBoard@{DiamondBoard}!make\_move@{make\_move}}
+\index{make\_move@{make\_move}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{make\_move()}{make\_move()}}
+{\footnotesize\ttfamily \label{class_diamond_board_ac2d77f8f06d5da87f57a8b9576f1ea6e} 
+void Diamond\+Board\+::make\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{r}{, }\item[{int}]{c}{, }\item[{char}]{symbol}{}\end{DoxyParamCaption})}
+
+
+
+Places symbol on board (used by AI minimax). 
+
+AI helper\+: place symbol on board. \Hypertarget{class_diamond_board_acfafa9175f8cbb6e1601574f93de346f}\index{DiamondBoard@{DiamondBoard}!undo\_move@{undo\_move}}
+\index{undo\_move@{undo\_move}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{undo\_move()}{undo\_move()}}
+{\footnotesize\ttfamily \label{class_diamond_board_acfafa9175f8cbb6e1601574f93de346f} 
+void Diamond\+Board\+::undo\+\_\+move (\begin{DoxyParamCaption}\item[{int}]{r}{, }\item[{int}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Removes symbol (undo a move). 
+
+AI helper\+: undo symbol placement. \Hypertarget{class_diamond_board_ac99663918be4334b0d08e4a5838ba610}\index{DiamondBoard@{DiamondBoard}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!DiamondBoard@{DiamondBoard}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_diamond_board_ac99663918be4334b0d08e4a5838ba610} 
+bool Diamond\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to apply a move to board. 
+
+Attempts to execute a move at (r,c) with symbol sym.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & \doxylink{class_move}{Move} pointer containing coordinates and symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the move is legal and applied. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Diamond\+\_\+\+TTT.\+h\item 
+Diamond\+\_\+\+TTT.\+cpp\end{DoxyCompactItemize}

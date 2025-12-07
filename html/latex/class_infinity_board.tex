@@ -1,0 +1,203 @@
+\doxysection{Infinity\+Board\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_infinity_board}{}\label{class_infinity_board}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+
+
+Infinity game board \+: 3x3 with rolling(oldest removed) behavior.  
+
+
+
+
+{\ttfamily \#include $<$Infinity\+Tic\+Tac\+Toe.\+h$>$}
+
+Inheritance diagram for Infinity\+Board\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_infinity_board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_infinity_board_a1ebd206ea49e1b42bb5414b6829ce036}{Infinity\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty 3x3 Infinity board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_infinity_board_a8fce921fbda84b119703ac36d03c57a6}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Place a move on the board (if valid) and manage history. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_infinity_board_ab6a01dff2737ebe5621ab9eef0bc77ec}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Check if given player has won (three aligned). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_infinity_board_a90d02f2ab0c59d21d0ffda4c41947c8b}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Not used; loss is determined by opponent\textquotesingle{}s win. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_infinity_board_a2353b573426adb100e69aeb879381336}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Detect draw (safety limit to avoid infinite games). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_infinity_board_ac28c07fdfa91ba64b993e009d987428c}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Combined check if game over for player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ T $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+T {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ T $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves} = 0
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Infinity\+Board$<$ T $>$}
+Infinity game board \+: 3x3 with rolling(oldest removed) behavior. 
+
+\label{doc-constructors}
+\Hypertarget{class_infinity_board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_infinity_board_a1ebd206ea49e1b42bb5414b6829ce036}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}!InfinityBoard@{InfinityBoard}}
+\index{InfinityBoard@{InfinityBoard}!InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{InfinityBoard()}{InfinityBoard()}}
+{\footnotesize\ttfamily \label{class_infinity_board_a1ebd206ea49e1b42bb5414b6829ce036} 
+template$<$typename T$>$ \\
+template \mbox{\hyperlink{class_infinity_board}{Infinity\+Board}}$<$ T $>$\+::\+Infinity\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construct an empty 3x3 Infinity board. 
+
+Explicit instantiation for char type.
+
+\doxylink{class_infinity_board}{Infinity\+Board} implementations. 
+
+\label{doc-func-members}
+\Hypertarget{class_infinity_board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_infinity_board_ac28c07fdfa91ba64b993e009d987428c}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_infinity_board_ac28c07fdfa91ba64b993e009d987428c} 
+template$<$typename T$>$ \\
+template bool \mbox{\hyperlink{class_infinity_board}{Infinity\+Board}}$<$ T $>$\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Combined check if game over for player. 
+
+
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ T $>$}}.
+
+\Hypertarget{class_infinity_board_a2353b573426adb100e69aeb879381336}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_infinity_board_a2353b573426adb100e69aeb879381336} 
+template$<$typename T$>$ \\
+template bool \mbox{\hyperlink{class_infinity_board}{Infinity\+Board}}$<$ T $>$\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Detect draw (safety limit to avoid infinite games). 
+
+\begin{DoxyReturn}{Returns}
+true if n\+\_\+moves exceeded safe limit 
+\end{DoxyReturn}
+Draw detection\+: if more than 50 moves have been made without a win, declare draw.
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ T $>$}}.
+
+\Hypertarget{class_infinity_board_a90d02f2ab0c59d21d0ffda4c41947c8b}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_infinity_board_a90d02f2ab0c59d21d0ffda4c41947c8b} 
+template$<$typename T$>$ \\
+template bool \mbox{\hyperlink{class_infinity_board}{Infinity\+Board}}$<$ T $>$\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Not used; loss is determined by opponent\textquotesingle{}s win. 
+
+
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ T $>$}}.
+
+\Hypertarget{class_infinity_board_ab6a01dff2737ebe5621ab9eef0bc77ec}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_infinity_board_ab6a01dff2737ebe5621ab9eef0bc77ec} 
+template$<$typename T$>$ \\
+template bool \mbox{\hyperlink{class_infinity_board}{Infinity\+Board}}$<$ T $>$\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if given player has won (three aligned). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & pointer to player \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if player has 3 in a row 
+\end{DoxyReturn}
+Check rows
+
+Check Columns
+
+Check diagonals
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ T $>$}}.
+
+\Hypertarget{class_infinity_board_a8fce921fbda84b119703ac36d03c57a6}\index{InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!InfinityBoard$<$ T $>$@{InfinityBoard$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_infinity_board_a8fce921fbda84b119703ac36d03c57a6} 
+template$<$typename T$>$ \\
+template bool \mbox{\hyperlink{class_infinity_board}{Infinity\+Board}}$<$ T $>$\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Place a move on the board (if valid) and manage history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & pointer to \doxylink{class_move}{Move$<$\+T$>$} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false otherwise 
+\end{DoxyReturn}
+check move coordinates
+
+chech cell is empty
+
+Place the symbol on the board and increment move count.
+
+record move for player X
+
+record move for player O
+
+If O has made more than 3 moves, remove the oldest move.
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_infinity_tic_tac_toe_8h}{Infinity\+Tic\+Tac\+Toe.\+h}}\item 
+\mbox{\hyperlink{_infinity_tic_tac_toe_8cpp}{Infinity\+Tic\+Tac\+Toe.\+cpp}}\end{DoxyCompactItemize}

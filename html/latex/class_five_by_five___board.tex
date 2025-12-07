@@ -1,0 +1,184 @@
+\doxysection{Five\+By\+Five\+\_\+\+Board Class Reference}
+\hypertarget{class_five_by_five___board}{}\label{class_five_by_five___board}\index{FiveByFive\_Board@{FiveByFive\_Board}}
+
+
+Implements the logic for the 5x5 Tic-\/\+Tac-\/\+Toe variant.  
+
+
+
+
+{\ttfamily \#include $<$Five\+By\+Five\+\_\+\+Board.\+h$>$}
+
+Inheritance diagram for Five\+By\+Five\+\_\+\+Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_five_by_five___board}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_five_by_five___board_aa0fa14ef0d659af87ccb32abd1399763}{Five\+By\+Five\+\_\+\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a 5×5 board initialized with \textquotesingle{}.\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_five_by_five___board_aad484568d9828dd29ac172fe9b708a5c}{update\+\_\+board}} (\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}move) override
+\begin{DoxyCompactList}\small\item\em Attempts to update the board based on the move. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_five_by_five___board_a32a6629dadbeda65748d541ab1ddb335}{is\+\_\+win}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks whether the given player has won. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_five_by_five___board_ae19cc701ef1cd16a25029b86b1e1716e}{is\+\_\+lose}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if the player has lost. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_five_by_five___board_a0f1747ab7efedce23295d04327e8bca3}{is\+\_\+draw}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Checks if the game is a draw (equal number of 3-\/lines). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_five_by_five___board_ac0889699d6403fb18e84e3c91f6c347e}{game\+\_\+is\+\_\+over}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Game ends when 0 or 1 empty cells remain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Board} (int \mbox{\hyperlink{class_board_a948d978e3b5fc460559b588f5dee9572}{rows}}, int \mbox{\hyperlink{class_board_afaf8842d9d52ac724e8c2f5642ecafc7}{columns}})
+\begin{DoxyCompactList}\small\item\em Construct a board with given dimensions. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Board} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Frees allocated board memory. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries get\+\_\+board\+\_\+matrix} () const
+\begin{DoxyCompactList}\small\item\em Return a copy of the current board as a 2D vector. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+rows} () const
+\begin{DoxyCompactList}\small\item\em Get number of rows. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+columns} () const
+\begin{DoxyCompactList}\small\item\em Get number of columns. \end{DoxyCompactList}\item 
+int {\bfseries get\+\_\+n\+\_\+moves} () const
+\begin{DoxyCompactList}\small\item\em Get number of moves. \end{DoxyCompactList}\item 
+char {\bfseries get\+\_\+cell} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Return content of cell x, y in current board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_board}{Board$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries rows}
+\begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\item 
+int {\bfseries columns}
+\begin{DoxyCompactList}\small\item\em Number of columns. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ char $>$ $>$ {\bfseries board}
+\begin{DoxyCompactList}\small\item\em 2D vector for the board \end{DoxyCompactList}\item 
+int {\bfseries n\+\_\+moves}
+\begin{DoxyCompactList}\small\item\em Number of moves made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the logic for the 5x5 Tic-\/\+Tac-\/\+Toe variant. 
+
+Players place X/O on a 5×5 grid. ~\newline
+ Game ends when {\itshape at most one} empty cell remains. ~\newline
+ Winner = player with the highest number of 3-\/in-\/a-\/row lines. 
+
+\label{doc-constructors}
+\Hypertarget{class_five_by_five___board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_five_by_five___board_aa0fa14ef0d659af87ccb32abd1399763}\index{FiveByFive\_Board@{FiveByFive\_Board}!FiveByFive\_Board@{FiveByFive\_Board}}
+\index{FiveByFive\_Board@{FiveByFive\_Board}!FiveByFive\_Board@{FiveByFive\_Board}}
+\doxysubsubsection{\texorpdfstring{FiveByFive\_Board()}{FiveByFive\_Board()}}
+{\footnotesize\ttfamily \label{class_five_by_five___board_aa0fa14ef0d659af87ccb32abd1399763} 
+Five\+By\+Five\+\_\+\+Board\+::\+Five\+By\+Five\+\_\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a 5×5 board initialized with \textquotesingle{}.\textquotesingle{}. 
+
+Initializes the 5x5 board with all \textquotesingle{}.\textquotesingle{} cells. 
+
+\label{doc-func-members}
+\Hypertarget{class_five_by_five___board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_five_by_five___board_ac0889699d6403fb18e84e3c91f6c347e}\index{FiveByFive\_Board@{FiveByFive\_Board}!game\_is\_over@{game\_is\_over}}
+\index{game\_is\_over@{game\_is\_over}!FiveByFive\_Board@{FiveByFive\_Board}}
+\doxysubsubsection{\texorpdfstring{game\_is\_over()}{game\_is\_over()}}
+{\footnotesize\ttfamily \label{class_five_by_five___board_ac0889699d6403fb18e84e3c91f6c347e} 
+bool Five\+By\+Five\+\_\+\+Board\+::game\+\_\+is\+\_\+over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Game ends when 0 or 1 empty cells remain. 
+
+Game over when ≤1 empty cell remains. 
+
+Implements \mbox{\hyperlink{class_board_ae0e4575ec3cc4b6eb9f367ffb2beed13}{Board$<$ char $>$}}.
+
+\Hypertarget{class_five_by_five___board_a0f1747ab7efedce23295d04327e8bca3}\index{FiveByFive\_Board@{FiveByFive\_Board}!is\_draw@{is\_draw}}
+\index{is\_draw@{is\_draw}!FiveByFive\_Board@{FiveByFive\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_draw()}{is\_draw()}}
+{\footnotesize\ttfamily \label{class_five_by_five___board_a0f1747ab7efedce23295d04327e8bca3} 
+bool Five\+By\+Five\+\_\+\+Board\+::is\+\_\+draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the game is a draw (equal number of 3-\/lines). 
+
+Draw\+: both players have equal 3-\/lines. 
+
+Implements \mbox{\hyperlink{class_board_a8dbe2a243881986f3e53b45799d377fc}{Board$<$ char $>$}}.
+
+\Hypertarget{class_five_by_five___board_ae19cc701ef1cd16a25029b86b1e1716e}\index{FiveByFive\_Board@{FiveByFive\_Board}!is\_lose@{is\_lose}}
+\index{is\_lose@{is\_lose}!FiveByFive\_Board@{FiveByFive\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_lose()}{is\_lose()}}
+{\footnotesize\ttfamily \label{class_five_by_five___board_ae19cc701ef1cd16a25029b86b1e1716e} 
+bool Five\+By\+Five\+\_\+\+Board\+::is\+\_\+lose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the player has lost. 
+
+Lose\+: opponent has more 3-\/lines.
+
+\begin{DoxyReturn}{Returns}
+true if opponent has more 3-\/lines. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a207d5f6feb77f81c51d1462f0245890d}{Board$<$ char $>$}}.
+
+\Hypertarget{class_five_by_five___board_a32a6629dadbeda65748d541ab1ddb335}\index{FiveByFive\_Board@{FiveByFive\_Board}!is\_win@{is\_win}}
+\index{is\_win@{is\_win}!FiveByFive\_Board@{FiveByFive\_Board}}
+\doxysubsubsection{\texorpdfstring{is\_win()}{is\_win()}}
+{\footnotesize\ttfamily \label{class_five_by_five___board_a32a6629dadbeda65748d541ab1ddb335} 
+bool Five\+By\+Five\+\_\+\+Board\+::is\+\_\+win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks whether the given player has won. 
+
+Win\+: more 3-\/lines than opponent.
+
+\begin{DoxyReturn}{Returns}
+true if player\textquotesingle{}s 3-\/lines \texorpdfstring{$>$}{>} opponent’s 3-\/lines once board is nearly full. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_ab316fe3e79677b4617fc3d90d6c48f33}{Board$<$ char $>$}}.
+
+\Hypertarget{class_five_by_five___board_aad484568d9828dd29ac172fe9b708a5c}\index{FiveByFive\_Board@{FiveByFive\_Board}!update\_board@{update\_board}}
+\index{update\_board@{update\_board}!FiveByFive\_Board@{FiveByFive\_Board}}
+\doxysubsubsection{\texorpdfstring{update\_board()}{update\_board()}}
+{\footnotesize\ttfamily \label{class_five_by_five___board_aad484568d9828dd29ac172fe9b708a5c} 
+bool Five\+By\+Five\+\_\+\+Board\+::update\+\_\+board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to update the board based on the move. 
+
+Attempts to place a symbol on the board.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Pointer to \doxylink{class_move}{Move$<$char$>$} containing coordinates + symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the update succeeds. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_board_a93d9dec601dda58b7e206ccb47633e57}{Board$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Five\+By\+Five\+\_\+\+Board.\+h\item 
+Five\+By\+Five\+\_\+\+Board.\+cpp\end{DoxyCompactItemize}

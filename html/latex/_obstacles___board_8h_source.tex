@@ -1,0 +1,33 @@
+\doxysection{Obstacles\+\_\+\+Board.\+h}
+\hypertarget{_obstacles___board_8h_source}{}\label{_obstacles___board_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}BoardGame\_Classes.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_obstacles___board_ac7471ada45ae61852023ef21bff87407}{Obstacles\_Board}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_board_ae5dfded241ee3644196e2f6074d1d0b1}{Board}}<char>\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_obstacles___board_ac7471ada45ae61852023ef21bff87407}{Obstacles\_Board}}(\textcolor{keywordtype}{char}\ blankSymbol\ =\ \textcolor{charliteral}{'-\/'},\ \textcolor{keywordtype}{char}\ obstacleSymbol\ =\ \textcolor{charliteral}{'\#'});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_obstacles___board_a51f3c83c61219c03b6c66231448b93b8}{update\_board}}(\mbox{\hyperlink{class_move}{Move<char>}}*\ move)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_obstacles___board_aac85c909cd7d0e59c4ba2dea35789c26}{is\_win}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_obstacles___board_a8cfc2aeca16df3eed8c6fa739a7c1a4d}{is\_lose}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_obstacles___board_a727f0d88ad486a7fb74142f590f7eda0}{is\_draw}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_obstacles___board_aa1db0075134ef87705583442ca91ca4a}{game\_is\_over}}(\mbox{\hyperlink{class_player}{Player<char>}}*\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_obstacles___board_a5063c45c558defc606605fa55e1f254c}{place\_obstacles}}(\textcolor{keyword}{const}\ std::vector<std::pair<int,int>>\&\ cells);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{char}\ blank;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{char}\ obstacle;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_win\_symbol(\textcolor{keywordtype}{char}\ s)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ full\_board()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \};}
+
+\end{DoxyCode}

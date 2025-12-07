@@ -1,0 +1,110 @@
+\doxysection{Misere\+UI Class Reference}
+\hypertarget{class_misere_u_i}{}\label{class_misere_u_i}\index{MisereUI@{MisereUI}}
+
+
+User interface for Misère Tic-\/\+Tac-\/\+Toe.  
+
+
+
+
+{\ttfamily \#include $<$Misere\+\_\+\+TICTAKTOE.\+h$>$}
+
+Inheritance diagram for Misere\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_misere_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_misere_u_i_abef6a347634f9f69b84f33b629f77f95}{get\+\_\+move}} (\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}player) override
+\begin{DoxyCompactList}\small\item\em Reads user\textquotesingle{}s or AI\textquotesingle{}s move. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_misere_u_i_ac139718368795a58c5b63d8842a7fb97}{create\+\_\+player}} (std\+::string \&name, char symbol, Player\+Type type) override
+\begin{DoxyCompactList}\small\item\em Creates a player object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_misere_u_i_a7aa256e211aa284fe2ee772cb0d18be6}{display\+\_\+board\+\_\+matrix}} (const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&matrix) const override
+\begin{DoxyCompactList}\small\item\em Displays 3×3 board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries UI} (int cell\+\_\+display\+\_\+width=3)
+\begin{DoxyCompactList}\small\item\em Construct the \doxylink{class_u_i}{UI} and display a welcome message. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+message} (string message)
+\begin{DoxyCompactList}\small\item\em Display any message to the user. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a6966a040c995b2292e5edddaa94f889a}{setup\+\_\+players}} ()
+\begin{DoxyCompactList}\small\item\em Set up players for the game. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_u_i_a94561e0bb4bbcbe5ff71ca6d751922df}{create\+\_\+player}} (string \&name, char symbol, Player\+Type type)
+\begin{DoxyCompactList}\small\item\em Create a player object based on input name, symbol, and type. \end{DoxyCompactList}\item 
+virtual void {\bfseries display\+\_\+board\+\_\+matrix} (const vector$<$ vector$<$ char $>$ $>$ \&matrix) const
+\begin{DoxyCompactList}\small\item\em Display the current board matrix in formatted form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string {\bfseries get\+\_\+player\+\_\+name} (string player\+\_\+label)
+\begin{DoxyCompactList}\small\item\em Ask the user for the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
+virtual Player\+Type {\bfseries get\+\_\+player\+\_\+type\+\_\+choice} (string player\+\_\+label, const vector$<$ string $>$ \&options)
+\begin{DoxyCompactList}\small\item\em Ask the user to choose the player type from a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u_i}{UI$<$ char $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries cell\+\_\+width}
+\begin{DoxyCompactList}\small\item\em Width of each displayed board cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+User interface for Misère Tic-\/\+Tac-\/\+Toe. 
+
+Human \doxylink{class_player}{Player}\+:
+\begin{DoxyItemize}
+\item Enter row + col.
+\end{DoxyItemize}
+
+Computer \doxylink{class_player}{Player}\+:
+\begin{DoxyItemize}
+\item Random valid move (safe if possible). 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_misere_u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_misere_u_i_ac139718368795a58c5b63d8842a7fb97}\index{MisereUI@{MisereUI}!create\_player@{create\_player}}
+\index{create\_player@{create\_player}!MisereUI@{MisereUI}}
+\doxysubsubsection{\texorpdfstring{create\_player()}{create\_player()}}
+{\footnotesize\ttfamily \label{class_misere_u_i_ac139718368795a58c5b63d8842a7fb97} 
+\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Misere\+UI\+::create\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string \&}]{name}{, }\item[{char}]{symbol}{, }\item[{Player\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Creates a player object. 
+
+Creates either human or AI player. \Hypertarget{class_misere_u_i_a7aa256e211aa284fe2ee772cb0d18be6}\index{MisereUI@{MisereUI}!display\_board\_matrix@{display\_board\_matrix}}
+\index{display\_board\_matrix@{display\_board\_matrix}!MisereUI@{MisereUI}}
+\doxysubsubsection{\texorpdfstring{display\_board\_matrix()}{display\_board\_matrix()}}
+{\footnotesize\ttfamily \label{class_misere_u_i_a7aa256e211aa284fe2ee772cb0d18be6} 
+void Misere\+UI\+::display\+\_\+board\+\_\+matrix (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \&}]{matrix}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Displays 3×3 board. 
+
+Displays the 3x3 board. \Hypertarget{class_misere_u_i_abef6a347634f9f69b84f33b629f77f95}\index{MisereUI@{MisereUI}!get\_move@{get\_move}}
+\index{get\_move@{get\_move}!MisereUI@{MisereUI}}
+\doxysubsubsection{\texorpdfstring{get\_move()}{get\_move()}}
+{\footnotesize\ttfamily \label{class_misere_u_i_abef6a347634f9f69b84f33b629f77f95} 
+\mbox{\hyperlink{class_move}{Move}}$<$ char $>$ \texorpdfstring{$\ast$}{*} Misere\+UI\+::get\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}}$<$ char $>$ \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads user\textquotesingle{}s or AI\textquotesingle{}s move. 
+
+Gets move from user or AI (random). 
+
+Implements \mbox{\hyperlink{class_u_i_a8befa259c38c57e6ae2e8ed81c476337}{UI$<$ char $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Misere\+\_\+\+TICTAKTOE.\+h\item 
+misere\+\_\+tictactoe.\+cpp\end{DoxyCompactItemize}
