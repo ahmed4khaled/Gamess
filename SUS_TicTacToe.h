@@ -4,7 +4,7 @@
  */
 
 #pragma once
-#include "BoardGame_classes.h"
+#include "BoardGame_Classes.h"
 #include <map>
  /**
   * @class SUSBoard
@@ -51,6 +51,12 @@ private:
 
 
 public:
+    /// Constructor
+    SUS_UI();
+    
+    /// Virtual destructor
+    virtual ~SUS_UI();
+    
     /// Get move from current player
     Move<char>* get_move(Player<char>* p) override;
 };

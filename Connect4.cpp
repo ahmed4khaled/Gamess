@@ -114,6 +114,10 @@ Move<char>* SmartAI_Player::get_move() {
  * @section UI Implementation
  * This section contains user interface for the Connect Four game.
  */
+Connect4_UI::Connect4_UI() : UI<char>(3) {}
+
+Connect4_UI::~Connect4_UI() {}
+
 Move<char>* Connect4_UI::get_move(Player<char>* p) {
     int col;
 

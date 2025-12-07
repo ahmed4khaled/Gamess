@@ -84,7 +84,12 @@ public:
     /**
      * @brief Constructs the UI handler with board size = 3 for display scaling.
      */
-    MovingTTT4x4_UI() : UI<char>(3) {}
+    MovingTTT4x4_UI();
+    
+    /**
+     * @brief Virtual destructor
+     */
+    virtual ~MovingTTT4x4_UI();
 
     /**
      * @brief Gets a move from a player (human or computer).

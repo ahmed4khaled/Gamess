@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <limits>
 
  /**
  * @brief Seed the random number generator once.
@@ -21,6 +22,14 @@ static bool _infty_seeded = []() {
 /**
 * @brief InfinityBoard implementations
 */
+
+template <typename T>
+InfinityBoard<T>::InfinityBoard() : Board<T>(3, 3) {
+    for (int r = 0; r < 3; ++r)
+        for (int c = 0; c < 3; ++c)
+            this->board[r][c] = static_cast<T>(' ');
+    this->n_moves = 0;
+}
 
 template <typename T>
 bool InfinityBoard<T>::update_board(Move<T>* move) {
@@ -114,9 +123,7 @@ bool InfinityBoard<T>::is_win(Player<T>* player) {
 
 template <typename T>
 bool InfinityBoard<T>::is_lose(Player<T>*) {
-    /**
-	* @brief Loss is determined by opponent's win; not used here.
-    */
+    // Loss is determined by opponent's win; not used here.
     return false;
 }
 

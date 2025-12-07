@@ -11,7 +11,7 @@
 #ifndef _INFINITY_TICTACTOE_H
 #define _INFINITY_TICTACTOE_H
 
-#include "BoardGame_classes.h"
+#include "BoardGame_Classes.h"
 #include <queue>
 #include <utility>
 #include <string>
@@ -25,8 +25,8 @@ private:
     /**
     * @brief Queue to track move chronology for removal.
     */
-    queue<pair<int, int>> history_X;  
-    queue<pair<int, int>> history_O;  
+    std::queue<std::pair<int, int>> history_X;  
+    std::queue<std::pair<int, int>> history_O;  
     /**
      * @brief Number of moves after which the oldest move is removed.
 	 */

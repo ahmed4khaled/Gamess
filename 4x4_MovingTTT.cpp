@@ -126,6 +126,8 @@ bool MovingTTT4x4_Board::is_draw(Player<char>* p) {
 // UI IMPLEMENTATION
 //////////////////////////////////////////////////////
 
+MovingTTT4x4_UI::MovingTTT4x4_UI() : UI<char>(3) {}
+
 /**
  * @brief Retrieves a move from either a human or a computer player.
  *
@@ -199,3 +201,5 @@ Move<char>* MovingTTT4x4_UI::get_move(Player<char>* player) {
 
     return new Move<char>(encodedX, encodedY, player->get_symbol());
 }
+
+MovingTTT4x4_UI::~MovingTTT4x4_UI() {}

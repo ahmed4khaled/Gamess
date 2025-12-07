@@ -87,6 +87,15 @@ private:
  */
 class Connect4_UI : public UI<char> {
 public:   
+    /**
+     * @brief Constructor
+     */
+    Connect4_UI();
+    
+    /**
+     * @brief Virtual destructor
+     */
+    virtual ~Connect4_UI();
 
     /**
      * @brief Ask player for a move.

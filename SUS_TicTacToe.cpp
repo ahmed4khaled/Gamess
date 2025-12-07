@@ -86,6 +86,8 @@ bool SUSBoard::game_is_over(Player<char>* p) {
 /**
 * @brief SUS game user interface 
 */
+SUS_UI::SUS_UI() : UI<char>(3) {}
+
 char SUS_UI::ask_letter(Player<char>* p) {
     char c;
     cout << p->get_name() << " choose your letter (S or U): ";
@@ -151,3 +153,5 @@ Move<char>* SUS_UI::get_move(Player<char>* p) {
 
     return new Move<char>(x, y, fixedLetter);
 }
+
+SUS_UI::~SUS_UI() {}
