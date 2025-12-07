@@ -276,7 +276,7 @@ else if (choice == 11) {
 else if (choice == 12) {
     srand(static_cast<unsigned int>(time(0)));
     UI<char>* ui = new SUS_UI();
-    Board<char>* board = new SUSBoard();
+    Board<char>* board = new SUS_Board();
     Player<char>** players = ui->setup_players();
     GameManager<char> game(board, players, ui);
     game.run();
