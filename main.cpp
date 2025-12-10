@@ -101,6 +101,7 @@ int main() {
             UI<char>* ui = new MisereUI();
             Board<char>* board = new MisereBoard();
             Player<char>** players = ui->setup_players();
+            static_cast<MisereUI*>(ui)->display_rules();
 
             GameManager<char> game(board, players, ui);
             game.run();
@@ -119,6 +120,7 @@ int main() {
             UI<int>* ui = new Numerical_TicTacToe_UI();
             Board<int>* board = new Numerical_TicTacToe_Board();
             Player<int>** players = ui->setup_players();
+            static_cast<Numerical_TicTacToe_UI*>(ui)->display_rules();
 
             GameManager<int> game(board, players, ui);
             game.run();
@@ -137,6 +139,7 @@ int main() {
             UI<char>* ui = new DiamondUI();
             Board<char>* board = new DiamondBoard();
             Player<char>** players = ui->setup_players();
+            static_cast<DiamondUI*>(ui)->display_rules();
 
             GameManager<char> game(board, players, ui);
             game.run();
@@ -227,6 +230,7 @@ int main() {
             UI<char>* ui = new MovingTTT4x4_UI();
             Board<char>* board = new MovingTTT4x4_Board();
             Player<char>** players = ui->setup_players();
+            static_cast<MovingTTT4x4_UI*>(ui)->display_rules();
 
             GameManager<char> game(board, players, ui);
             game.run();

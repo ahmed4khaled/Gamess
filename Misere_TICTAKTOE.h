@@ -88,6 +88,10 @@ public:
      * @brief Displays 3×3 board.
      */
     void display_board_matrix(const std::vector<std::vector<char>>& matrix) const override;
+    /**
+     * @brief Displays Misère Tic-Tac-Toe rules.
+     */
+    void display_rules() const ;
 
 private:
     /**

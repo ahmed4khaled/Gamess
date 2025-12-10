@@ -84,6 +84,10 @@ public:
      * @brief Gets move from human or AI.
      */
     Move<int>* get_move(Player<int>* player) override;
+    /**
+     * @brief Displays Numerical Tic-Tac-Toe rules.
+     */
+    void display_rules() const ;
 };
 
 #endif

@@ -193,6 +193,19 @@ Player<int>* Numerical_TicTacToe_UI::create_player(string& name, int symbol, Pla
 }
 
 /**
+ * @brief Displays Numerical Tic-Tac-Toe rules.
+ */
+void Numerical_TicTacToe_UI::display_rules() const {
+    std::cout << "\n========== NUMERICAL TIC-TAC-TOE ==========\n";
+    std::cout << "Rules:\n";
+    std::cout << "- Player 1 uses odd numbers: {1,3,5,7,9}\n";
+    std::cout << "- Player 2 uses even numbers: {2,4,6,8}\n";
+    std::cout << "- Numbers cannot be reused.\n";
+    std::cout << "- Win by making a line (row, column, diagonal) summing to 15.\n";
+    std::cout << "===========================================\n\n";
+}
+
+/**
  * @brief Requests move from human or generates AI move.
  *
  * Human:

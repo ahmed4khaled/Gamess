@@ -125,7 +125,19 @@ bool MovingTTT4x4_Board::is_draw(Player<char>* p) {
 //////////////////////////////////////////////////////
 // UI IMPLEMENTATION
 //////////////////////////////////////////////////////
-
+void MovingTTT4x4_UI::display_rules() const {
+    cout << "\n4x4 Moving Tic-Tac-Toe Rules:\n"
+         << "- Played on a 4x4 board with initial setup:\n"
+         << "  X X X X\n"
+         << "         \n"
+         << "         \n"
+         << "  O O O O\n"
+         << "- Players take turns moving their pieces (X or O).\n"
+         << "- A piece can move one square up, down, left, or right into an empty cell.\n"
+         << "- The first player to align 3 of their symbols in a row (horizontally,\n"
+         << "  vertically, or diagonally) wins the game.\n"
+         << endl;
+}
 MovingTTT4x4_UI::MovingTTT4x4_UI() : UI<char>(3) {}
 
 /**

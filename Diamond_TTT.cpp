@@ -298,6 +298,15 @@ Player<char>* DiamondUI::create_player(string& name, char symbol, PlayerType typ
 
     return new Player<char>(name, symbol, type);
 }
+void DiamondUI::display_rules() const {
+    cout << "\nDiamond Tic-Tac-Toe Rules:\n"
+         << "- Played on a 5x5 diamond-shaped board.\n"
+         << "- Players take turns placing their symbols (X or O) in empty cells.\n"
+         << "- A player wins by forming both a sequence of 3 and a sequence of 4\n"
+         << "  of their symbols in different directions (horizontal, vertical, diagonal).\n"
+         << "- The game ends in a draw if all playable cells are filled without a winner.\n"
+         << endl;
+}
 
 /**
  * @brief Retrieves move from player (human or AI).

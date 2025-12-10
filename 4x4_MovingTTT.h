@@ -97,6 +97,11 @@ public:
      * @return Pointer to Move<char> containing row, column, and symbol.
      */
     Move<char>* get_move(Player<char>* player) override;
+
+    /**
+     * @brief Displays the rules of the 4x4 Moving Tic-Tac-Toe game.
+     */
+    void display_rules() const;
 };
 
 #endif

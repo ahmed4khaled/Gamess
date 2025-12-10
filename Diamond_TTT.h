@@ -160,6 +160,9 @@ public:
      * @brief Gets move from player (AI or human).
      */
     Move<char>* get_move(Player<char>* player) override;
+    /**
+     * @brief Displays Diamond Tic-Tac-Toe rules.
+     */    void display_rules() const ;
 };
 
 #endif

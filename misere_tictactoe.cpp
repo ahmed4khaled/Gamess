@@ -133,6 +133,17 @@ int MisereUI::read_int_in_range(int minv, int maxv) const {
 Player<char>* MisereUI::create_player(std::string& name, char symbol, PlayerType type) {
     return new Player<char>(name, symbol, type);
 }
+/**
+ * @brief Displays misere tic-tac-toe rules.
+ */
+void MisereUI::display_rules() const {
+    std::cout << "\n========== MISERE TIC-TAC-TOE ==========\n";
+    std::cout << "Objective: Force your opponent to get 3-in-a-row!\n";
+    std::cout << "In misere tic-tac-toe, getting 3-in-a-row means you LOSE.\n";
+    std::cout << "The first player to form 3-in-a-row loses the game.\n";
+    std::cout << "If the board fills up with no 3-in-a-row, it's a draw.\n";
+    std::cout << "========================================\n\n";
+}
 
 /**
  * @brief Displays the 3x3 board.
@@ -157,10 +168,10 @@ Move<char>* MisereUI::get_move(Player<char>* p) {
 
     // Human
     if (p->get_type() == PlayerType::HUMAN) {
-        std::cout << p->get_name() << " (" << p->get_symbol() << ") enter row 0–2: ";
+        std::cout << p->get_name() << " (" << p->get_symbol() << ") enter row from 0 to 2: ";
         int r = read_int_in_range(0,2);
 
-        std::cout << "enter col 0–2: ";
+        std::cout << "enter col from 0 to 2: ";
         int c = read_int_in_range(0,2);
 
         return new Move<char>(r, c, p->get_symbol());
