@@ -65,7 +65,7 @@ cl /EHsc /std:c++17 *.cpp /Fe:board_games.exe
 board_games.exe
 ```
 
-## Suggested CV Bullet Points
+##  Bullet Points
 
 - Designed and developed a reusable C++ board-game engine using templates, inheritance, and polymorphism.
 - Implemented 14 game variants (including Ultimate Tic-Tac-Toe and Connect Four) with clean separation between logic and UI.
